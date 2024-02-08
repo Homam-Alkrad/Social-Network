@@ -1,0 +1,47 @@
+﻿@using StudentCommunity.UI.Models.Resources
+@model List<ResourceViewModel>
+@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@inject UserManager<ApplicationUser> UserManager
+@{
+    Layout = "";
+    var user = await UserManager.GetUserAsync(User);
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        if(!item.IsDelete)
+        {
+            <div class="col-lg-4 col-sm-6">
+            <div class="g-post-classic">
+                <figure>
+                    <img src="@item.PhotoPath" alt="book photo" class="book" />
+                </figure>
+                <div class="g-post-meta">
+                    <div class="post-title">
+                        <h4><a title="" id="myLink" href="#" style="height:52px;" class="bookTitle description">@item.Name</a></h4>
+                        <p style="max-height: 78px;overflow-y: scroll;" class="description">@item.Description</p>
+                        <span class="p-date">by  <a href="#" title="">@item.Publisher.FullName</a> - @item.publishedTime.ToString("MMM dd, yyyy")</span>
+                    </div>
+                    <div class="g-post-ranking d-flex flex-row justify-content-between">
+                        <a title="Like" href="#" onclick="likeResource(event, @item.Id)" class="likes">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true" title="like"></i>
+                            <ins>@item.likes</ins>
+                        </a>
+                        <a title="Report" href="#" class="report" onclick="reportResource(event, @item.Id)">
+                            <i class="fa fa-times" aria-hidden="true" title="Report"></i>
+                            <ins>@item.Reports</ins>
+                        </a>
+                        <a title="Download" href="@item.FilePath" download><i class="fa fa-download" aria-hidden="true" title="download"></i></a>
+                        @if (user != null && User.IsInRole("Admin"))
+                        {
+                            <a title="Delete" asp-action="Delete" asp-controller="Library" asp-route-Id="@item.Id"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    }
+</div>

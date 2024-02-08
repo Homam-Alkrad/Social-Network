@@ -1,0 +1,9 @@
+﻿@using StudentCommunity.UI.Data
+@model IEnumerable<Group>
+
+@foreach (var item in Model.OrderBy(x=>x.Name))
+{
+    <li>
+            <a asp-action="Group" asp-controller="Groups" asp-route-groupId="@item.Id">@item.Name</a>
+    </li>
+}

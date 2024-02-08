@@ -1,0 +1,160 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@using StudentCommunity.UI.Models.Competition
+@model List<CompetitionViewModel>
+@inject UserManager<ApplicationUser> UserManager
+@{
+	Layout = "";
+	var user = await UserManager.GetUserAsync(User);
+	ViewData["Title"] = "Competitions";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/strip.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+
+</head>
+<body>
+	<div class="theme-layout">
+		<section>
+			<div class="gray-bg pt-4">
+				<div class="container-fluid">
+					<div class="row" id="page-contents">
+						<div class="col-lg-3">
+							<aside class="sidebar static">
+								<div class="widget">
+									<h4 class="widget-title">
+										@user.FullName
+										<i class="fa fa-user" aria-hidden="true"></i>
+									</h4>
+									<ul class="socials">
+										<li>
+											<a class="btn btn-primary" asp-action="Create" asp-controller="Competition">Create</a>
+										</li>
+										@if (user != null && User.IsInRole("Admin"))
+										{
+											<li>
+												<a class="btn btn-primary" asp-action="RoleList" asp-controller="Account">Edit Role</a>
+											</li>
+										}
+									</ul>
+								</div>
+								<div class="widget stick-widget px-4">
+									<h4 class="widget-title">Shortcuts</h4>
+									<ul class="naves" style="padding:30px 3px;">
+										<li class="width:100%">
+											<i class="ti-mouse-alt"></i>
+											<a asp-action="MyProfile" asp-controller="Community" title="">My Profile</a>
+										</li>
+										<li>
+											<i class="fa fa-trophy" aria-hidden="true"></i>
+											<a asp-action="Index" asp-controller="Competition">Competitions</a>
+										</li>
+										<li>
+											<i class="ti-home"></i>
+											<a asp-action="Index" asp-controller="Community">Communitities</a>
+										</li>
+										<li>
+											<i class="fa fa-briefcase" aria-hidden="true"></i>
+											<a asp-action="Index" asp-controller="Library" title=""> Student Library </a>
+										</li>
+										<li>
+											<i class="ti-clipboard"></i>
+											<a asp-action="News" asp-controller="Community" title="">News feed</a>
+										</li>
+										<li>
+											<i class="ti-user"></i>
+											<a href="timeline-friends.html" title="">friends</a>
+										</li>
+										<li>
+											<i class="fa fa-users" aria-hidden="true"></i>
+											<a asp-action="Index" asp-controller="Groups" title="">My Groups</a>
+										</li>
+										<li>
+											<i class="ti-comments-smiley"></i>
+											<a asp-action="Chat" asp-controller="ChatSystem" title="">Chat System</a>
+										</li>
+										<li>
+											<i class="ti-power-off"></i>
+											<a asp-action="Logout" asp-controller="Account" title="">Logout</a>
+										</li>
+									</ul>
+								</div>
+							</aside>
+						</div>
+						<div class="col-lg-9">
+							<div class="blog-sec right-pading">
+								<div class="post-filter-sec">
+									<form id="competitionSearchForm" class="filter-form">
+										<input type="text" id="searchQuery" placeholder="Search Competition">
+										<button type="button" onclick="searchCompetitions()"><i class="ti-search"></i></button>
+									</form>
+								</div>
+								<div class="row" id="competitionList">
+									@foreach (var item in Model)
+									{
+										<div class="col-lg-4 col-sm-6 competitionCard">
+											<div class="g-post-classic py-4">
+												<div class="g-post-meta">
+													<div class="post-title">
+														<h4><a title="" href="#">@item.Name</a></h4>
+														<p style="max-height: 100px;overflow-y: scroll;" class="description">@item.Description</p>
+													</div>
+													<div class="g-post-ranking text-center">
+														<a class="text-primary" asp-action="AnnouncingCompetition" asp-controller="Competition" asp-route-Id="@item.InitialCompetitionId">Announcing This Competition</a>
+														<a class="text-primary" asp-action="CreateQuestion" asp-controller="Competition" asp-route-Id="@item.InitialCompetitionId">Add Questions To This Competition</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+		<script src="~/custom/js/main.min.js"></script>
+		<script src="~/custom/js/strip.pkgd.min.js"></script>
+		<script src="~/custom/js/script.js"></script>
+
+		<script>
+			// Function to perform search dynamically as the user types
+			function searchCompetitions() {
+				var searchQuery = document.getElementById("searchQuery").value.toLowerCase();
+				var competitionList = document.getElementById("competitionList");
+
+				// Reset the display property for all competition cards
+				for (var i = 0; i < competitionList.children.length; i++) {
+					var competitionCard = competitionList.children[i];
+					competitionCard.style.display = "block";
+				}
+
+				// Loop through each competition card
+				for (var i = 0; i < competitionList.children.length; i++) {
+					var competitionCard = competitionList.children[i];
+					var competitionName = competitionCard.querySelector("h4 a").innerText.toLowerCase();
+
+					// Check if the competition name contains the search query
+					if (!competitionName.includes(searchQuery)) {
+						competitionCard.style.display = "none";
+					}
+				}
+			}
+
+			// Attach the search function to the input field's input event
+			document.getElementById("searchQuery").addEventListener("input", searchCompetitions);
+		</script>
+</body>
+</html>

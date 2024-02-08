@@ -1,0 +1,40 @@
+﻿@using StudentCommunity.UI.Data
+@model IEnumerable<ApplicationUser>
+
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .friend-list {
+        display: none; /* Initially hide the friend list */
+    }
+</style>
+
+<div class="top-search">
+    <form method="post" class="">
+        <input type="text" id="searchInput" placeholder="Search Friend" oninput="searchFriends()" onfocus="showFriendList()">
+        <button data-ripple><i class="ti-search" onclick="searchFriendsb(event)"></i></button>
+    </form>
+    <div class="sidebar static" style="width:100%;">
+        <div class="widget friends-list" style="display:none;">
+
+            <ul id="people-list" class="friendz-list">
+                @foreach (var item in Model)
+                {
+                    <li data-user-id="@item.Id" class="hidden">
+                        <div class="custom-alert col-lg-12 border border-4 text-center" id="custom-alert-@item.Id">
+                            <div class="error-message" id="error-message-@item.Id"></div>
+                            <span class="close-btn" onclick="closeAlert('custom-alert-@item.Id');">&times;</span>
+                        </div>
+                        <img class="searchImg" src="@item.ProfileImg" alt="">
+                        <div class="friendz-meta">
+                            <a href="@item.Email">@item.FullName</a>
+                            <a asp-action="AddFriend" asp-controller="Friend" asp-route-userId="@item.Id" class="add-friend-link mt-2" style="color: blue; border: none;">Add Friend</a>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

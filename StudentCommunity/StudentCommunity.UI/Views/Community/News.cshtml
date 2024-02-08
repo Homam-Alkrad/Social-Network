@@ -1,0 +1,150 @@
+﻿@model List<StudentCommunity.UI.Models.NewsModel.NewsResponse>
+@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@inject UserManager<ApplicationUser> UserManager
+@{
+	Layout = "_Layout2";
+	var user = await UserManager.GetUserAsync(User);
+	ViewData["Title"] = "News Community";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>News Side</title>
+</head>
+<body>
+	<section>
+		<div class="gap gray-bg py-2">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" id="page-contents">
+							<div class="col-lg-3">
+								<aside class="sidebar static" style="width: 100%;">
+									<div class="widget px-2">
+										<h4 class="widget-title">Shortcuts</h4>
+										<ul class="naves" style="padding:10px 5px;">
+											<li class="width:100%">
+												<i class="ti-mouse-alt"></i>
+												<a asp-action="MyProfile" asp-controller="Community" title="">My Profile</a>
+											</li>
+											<li>
+												<i class="ti-home"></i>
+												<a asp-action="Index" asp-controller="Community">Students Community</a>
+											</li>
+											<li>
+												<i class="fa fa-trophy" aria-hidden="true"></i>
+												<a asp-action="Index" asp-controller="Competition">Competitions Community</a>
+											</li>
+											<li>
+												<i class="fa fa-briefcase" aria-hidden="true"></i>
+												<a asp-action="Index" asp-controller="Library" title=""> Student Library </a>
+											</li>
+											<li>
+												<i class="ti-comments-smiley"></i>
+												<a asp-action="Chat" asp-controller="ChatSystem" title="">Chat System</a>
+											</li>
+											<li>
+												<i class="ti-clipboard"></i>
+												<a asp-action="News" asp-controller="Community" title="">News feed</a>
+											</li>
+											<li>
+												<i class="fa fa-users" aria-hidden="true"></i>
+												<a asp-action="Index" asp-controller="Groups" title="">My Groups</a>
+											</li>
+											<li>
+												<i class="ti-user"></i>
+												<a asp-action="Index" asp-controller="Friend" title="">friends</a>
+											</li>
+											<li>
+												<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+												<a asp-action="CreateAdvertising" asp-controller="Advertisement" title="">Advertisement</a>
+											</li>
+											<li>
+												<i class="fa fa-wpforms" aria-hidden="true"></i>
+												<a asp-action="Create" asp-controller="Assessment" title="">Create Feadback</a>
+											</li>
+											@if (user != null && User.IsInRole("Admin"))
+											{
+												<li>
+													<i class="fa fa-low-vision" aria-hidden="true"></i>
+													<a asp-action="RoleList" asp-controller="Account">Community Roles</a>
+												</li>
+											}
+											<li>
+												<i class="ti-power-off"></i>
+												<a asp-action="Logout" asp-controller="Account" title="">Logout</a>
+											</li>
+										</ul>
+									</div>
+									<div class="widget stick-widget px-2 pb-5">
+										<h4 class="widget-title">Your groups</h4>
+										<ul id="people-list">
+											@await Component.InvokeAsync("Group")
+										</ul>
+									</div>
+
+								</aside>
+							</div><!-- sidebar -->
+							<div class="col-lg-6">
+								<div class="">
+									<!-- Loop through items in the Model -->
+									@foreach (var item in Model)
+									{
+										int i = 0;
+										<div class="central-meta item mb-1">
+											<div class="user-post">
+												<div class="friend-info">
+													<div class="friend-name">
+														<ins class="d-flex flex-row col-lg-12" style="text-align:right;">
+															<a href="@item.results[i].link" title="">@item.results[i].title</a>
+														</ins>
+														<span>@item.results[i].pubDate</span>
+													</div>
+												</div>
+												<div class="container col-md-12 d-flex flex-row justify-content-between border-top pt-3">
+												</div>
+											</div>
+										</div>
+										i++;
+									}
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<aside class="sidebar static" style="width:100%;">
+									<div class="widget friend-list">
+										<h4 class="widget-title">Advertisements</h4>
+										@await Component.InvokeAsync("AdvertisementImages")
+									</div>
+									<div class="widget friend-list">
+										<h4 class="widget-title">Advertisements</h4>
+										@await Component.InvokeAsync("Advertisement")
+									</div>
+									<div class="widget friend-list stick-widget">
+										<h4 class="widget-title">Your Friends</h4>
+										<div id="searchDir"></div>
+										<ul id="people-list" class="friendz-list">
+											@await Component.InvokeAsync("FriendPage",user.Id)
+										</ul>
+									</div>
+								</aside>
+							</div>
+						</div>
+					</div><!-- centerl meta -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Include Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

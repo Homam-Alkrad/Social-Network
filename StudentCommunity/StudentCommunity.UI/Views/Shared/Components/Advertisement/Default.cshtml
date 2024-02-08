@@ -1,0 +1,26 @@
+﻿<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+	</ol>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<div class="m-2 p-2">
+				<h4  class="text-dark text-center">واجهة الاعلانات النصية</h4>
+				<p style="text-align:right;">
+					استعد لرحلة التميز! قم بإطلاق إعلاناتك اليوم وافتح أبواب الفرص والتفوق.
+					بفضل إعلاناتك، ستبني هويتك التجارية وتتواصل مع جمهورك المستهدف بشكل فعّال. لا تدع الفرصة تفوتك، بل اترك بصمتك في عقول الناس وابدأ رحلتك نحو النجاح الاستثنائي!
+				</p>
+				<p class="text-dark p-2 text-center"><b><a asp-action="CreateImageAdvertising" asp-controller="Advertisement">Start Now ! </a></b></p>
+			</div>
+		</div>
+		@foreach (var item in Model)
+		{
+			<div class="carousel-item">
+				<div class="m-2 p-2">
+					<h6 class="text-dark text-center">@item.Title</h6>
+					<p style="text-align:right;">@item.Text</p>
+					<p class="text-dark bg-info p-2 text-center"><b>Phone Number: @item.PhoneNumber</b></p>
+				</div>
+			</div>
+		}
+	</div>
+</div>

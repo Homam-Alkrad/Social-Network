@@ -1,0 +1,91 @@
+﻿@using StudentCommunity.UI.Data;
+@model IEnumerable<Post>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+	var user = await UserManager.GetUserAsync(User);
+}
+<html>
+<head>
+	<link href="~/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+	<link href="~/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+
+</head>
+<body>
+
+
+	@foreach (var item in Model)
+	{
+		<div class="central-meta item mb-1">
+			<div class="user-post">
+				<div class="friend-info">
+
+					<figure>
+						<img src="@item.User.ProfileImg" alt="">
+					</figure>
+					<div class="friend-name">
+						<ins class="d-flex flex-row justify-content-between">
+							@{
+								var ThisUser = await UserManager.FindByEmailAsync(item.User.Email);
+							}
+
+							@if (ThisUser != null && await UserManager.IsInRoleAsync(ThisUser, "Admin"))
+							{
+								<a href="time-line.html" title="">@item.User.FullName <i class="fa fa-check-circle  ml-4" aria-hidden="true"></i></a>
+							}
+							else
+							{
+								<a href="time-line.html" title="">@item.User.FullName</a>
+							}
+
+							<a>@item.User.university.universityName</a>
+							
+						</ins>
+
+						<span>@item.PublicationTime.ToString("MMM-dd HH:mm")</span>
+					</div>
+					<div>
+					</div>
+				</div>
+				<div class="description">
+					<p class="PostContiant">
+						@item.Content
+					</p>
+					<div class="post-meta" style="margin-bottom:15px;">
+						<img style="max-height: 290px;" src="@item.PhotoPath" />
+					</div>
+				</div>
+				<div class="container col-lg-12 col-sm-12 col-md-12 d-flex flex-column justify-content-between  border-top pt-3">
+					<div class="container col-md-12 d-flex flex-row justify-content-between">
+						<span class="like" data-toggle="tooltip" title="like">
+							<a href="#" onclick="likePost(event, @item.PostId)">
+								<i class="fa fa-thumbs-o-up mr-2" aria-hidden="true"></i><ins>@item.Likes</ins>
+							</a>
+						</span>
+						<span class="like" data-toggle="tooltip" title="comments">
+							<button type="button" onclick="toggleCommentSection(@item.PostId)" style="border: none;background: transparent;color: #545454;}">
+								<i class="fa fa-comments mr-2" aria-hidden="true"></i>
+							</button>
+						</span>
+						<span class="dislike" data-toggle="tooltip" title="dislike">
+							<a href="#" onclick="dislikePost(event, @item.PostId)">
+								<i class="fa fa-thumbs-o-down mr-2" aria-hidden="true"></i><ins>@item.Dislikes</ins>
+							</a>
+						</span>
+					</div>
+					<div class="comment-section" id="comment-section-@item.PostId" style="display: none;">
+						<div class="d-none d-lg-flex flex-row justify-content-between col-lg-12 mt-2 p-0" style="background-color: transparent; border: none;">
+							<input type="text" id="comment-input-@item.PostId" class="form-control col-lg-9" placeholder="Write a comment">
+							<button class="btn btn-primary col-lg-2" style="font-size: 10px;" onclick="postComment(@item.PostId)">Comment</button>
+						</div>
+						<div class="comment-scrollbar d-block mt-4 comment-container " style="max-height: 200px; overflow-y: scroll;">
+							@await Component.InvokeAsync("Comment", item.PostId)
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+</body>
+</html>

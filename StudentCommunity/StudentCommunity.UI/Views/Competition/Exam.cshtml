@@ -1,0 +1,324 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@using StudentCommunity.UI.Models.Competition
+@model ExamViewModel
+@inject UserManager<ApplicationUser> UserManager
+@{
+	Layout = "";
+	var user = await UserManager.GetUserAsync(User);
+	ViewData["Title"] = "Competition Exam";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/strip.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+	<link href="~/css/chat.css" rel="stylesheet" />
+	<style>
+		body {
+			overflow-y: auto;
+		}
+
+			body::-webkit-scrollbar,
+			.exam::-webkit-scrollbar,
+			.chat::-webkit-scrollbar,
+			.messages-container::-webkit-scrollbar {
+				width: 12px;
+			}
+
+			body::-webkit-scrollbar-thumb,
+			.exam::-webkit-scrollbar-thumb,
+			.chat::-webkit-scrollbar-thumb,
+			.chmessages-container::-webkit-scrollbar-thumb {
+				background-color: transparent;
+				border-radius: 6px;
+			}
+
+			body::-webkit-scrollbar-track,
+			.exam::-webkit-scrollbar-track,
+			.chat::-webkit-scrollbar-track,
+			.messages-container::-webkit-scrollbar-track {
+				background-color: transparent;
+			}
+
+		.exam {
+			overflow-y: auto;
+			max-height: 100vh;
+		}
+
+		.messages-container {
+			position: fixed;
+			top: 0;
+			right: 0;
+			height: 80vh;
+			overflow-y: auto;
+			padding-top:5px;
+		}
+
+		.blog-sec {
+			display: flex;
+		}
+
+		ul.list-unstyled {
+			/* Add any additional styling for the ul if needed */
+		}
+
+		ul#list {
+			/* Set height, overflow, and other styles for the container */
+		}
+
+		li.sender-message {
+			background-color: #e0e0e0;
+			padding: 10px 20px 10px 0px;
+			margin-bottom: 10px;
+			margin-left: 30px;
+			border-radius: 5px;
+			max-width: 80%; /* Adjust the maximum width as needed */
+			word-wrap: break-word; /* Allow long words to wrap */
+			text-align: right;
+			position: relative;
+			left: 10%;
+		}
+
+		li.receiver-message {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			max-width: 80%;
+			word-wrap: break-word;
+			align-self: flex-end;
+		}
+
+		.timer {
+			font-size: 20px;
+			font-weight: bold;
+		}
+		aside{
+			background-color: darkslategray;
+		}
+	</style>
+</head>
+<body>
+	<div class="theme-layout">
+		<div class="modal fade" id="customAlertModal" tabindex="-1" role="dialog" aria-labelledby="customAlertModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="customAlertModalLabel">Custom Alert</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Answer saved successfully!</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section>
+			<div class="p-2">
+				<div class="container-fluid">
+					<div class="row" id="page-contents">
+						<div class="col-lg-8 exam exPart">
+							<div class="blog-sec">
+								<div class="col-lg-12">
+									<div class="central-meta">
+										<div class="editing-info">
+											<div>
+												<i class="ti-info-alt"></i>
+												<span class="timer ml-4" id="countdown"></span>
+												<b class="ml-4 mt-5">@Model.team.Name</b>
+												<button id="toggleChatButton" class="ml-5" style="border:none;background-color:transparent;">
+													hidden Chat Room
+													<i class="fa fa-weixin" aria-hidden="true"></i>
+												</button>
+											</div>
+											@{
+												int questionCount = 1;
+											}
+											@foreach (var item in Model.questions)
+											{
+												<form id="form-@item.Id" class="answer-form">
+													<input type="hidden" name="questionId" value="@item.Id">
+													<input type="hidden" name="teamId" value="@Model.team.Id">
+													<div class="form-group">
+														<div>
+															<h4>
+																<span>@questionCount. </span> @item.QuestionTitle
+															</h4>
+														</div>
+														<div class="d-flex flex-row justify-content-between">
+															<p class="ml-4">
+																<i class="ti-info-alt"></i> @item.QuestionText
+															</p>
+															<span>@item.QuestionLevel</span>
+														</div>
+														@if (Model.TeamLeaderId == null)
+														{
+															<div class="mt-3">
+																<textarea name="answer" class="form-control border border-2" id="exampleFormControlTextarea1" rows="3">@item.answer</textarea>
+															</div>
+														}
+														else if (Model.TeamLeaderId != null)
+														{
+															if (Model.TeamLeaderId == user.Id)
+															{
+																<div class="mt-3">
+																	<textarea name="answer" class="form-control border border-2" id="exampleFormControlTextarea1" rows="3">@item.answer</textarea>
+																</div>
+															}
+														}
+													</div>
+													@if (Model.TeamLeaderId == null)
+													{
+														<div>
+															<input type="button" class="btn btn-success m-2 p-2 save-answer-btn" value="Save">
+														</div>
+													}
+													else if (Model.TeamLeaderId != null)
+													{
+														if (Model.TeamLeaderId == user.Id)
+														{
+															<div>
+																<input type="button" class="btn btn-success m-2 p-2 save-answer-btn" value="Save">
+															</div>
+														}
+													}
+												</form>
+
+												questionCount++;
+											}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<aside class="col-lg-4 chat border border-2 sidebar static" style="border:none; display: flex; flex-direction: column; background-color: darkslategray">
+							<h4 class="widget-title" style="margin-bottom: 0; color:white;">
+								Chat With Team
+								<i class="fa fa-users" aria-hidden="true"></i>
+							</h4>
+							<div class="messages-container position-relative">
+								<div class="no-messages-info" data-bind="if: chatMessages().length == 0">There are no messages.</div>
+								<ul class="list-unstyled" id="messages-list" data-bind="foreach: chatMessages">
+									<li>
+										<div class="message-item" data-bind="css: { ismine: isMine() === true }">
+											<span class="avatar avatar-lg mx-2 text-uppercase" data-bind="visible: avatar() == null, text: fromFullName()[0]"></span>
+											<img class="avatar avatar-lg mx-2" data-bind="visible: avatar() != null, attr: { src: avatar() != null ? avatar() : '' }" />
+											<div class="message-content">
+												<div class="content" data-bind="html: content"></div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="message-input-container">
+								<input id="message-input" type="text" value="" maxlength="500" data-bind="value:message, valueUpdate: 'afterkeydown', event: { keypress: onEnter }" placeholder="What's on your mind?" />
+								<div class="actions d-flex align-items-center">
+									<a role="button" id="btn-send-message" data-bind="click: sendNewMessage" style="color:darkslategray;">
+										<i class="fa fa-send"></i>
+									</a>
+								</div>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="~/js/jquery-3.7.0.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="~/custom/js/main.min.js"></script>
+	<script src="~/custom/js/strip.pkgd.min.js"></script>
+	<script src="~/lib/knockout/knockout-latest.min.js"></script>
+	<script src="~/lib/microsoft-signalr/signalr.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/js/teamschat.js"></script>
+	<script>
+		var competitionTime = new Date('@Model.competition.CompetitionTime');
+		competitionTime.setHours(competitionTime.getHours() + 1);
+
+		var countdownInterval = setInterval(updateCountdown, 1000);
+
+		function updateCountdown() {
+			var now = new Date();
+			var timeRemaining = competitionTime - now;
+
+			if (timeRemaining > 0) {
+				var minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+				var seconds = Math.floor((timeRemaining / 1000) % 60);
+
+				var formattedMinutes = ('0' + minutes).slice(-2);
+				var formattedSeconds = ('0' + seconds).slice(-2);
+
+				document.getElementById('countdown').innerText = formattedMinutes + ':' + formattedSeconds;
+			} else {
+				clearInterval(countdownInterval);
+				window.location.href = '/Competition/Index';
+			}
+		}
+		$(document).ready(function () {
+			$(".save-answer-btn").click(function () {
+				var form = $(this).closest("form");
+				var formData = form.serialize();
+
+				$.ajax({
+					url: "/Competition/SaveAnswer",
+					type: "POST",
+					data: formData,
+					success: function (response) {
+						$("#customAlertModal").modal("show");
+						setTimeout(function () {
+							$("#customAlertModal").modal("hide");
+						}, 3000);
+					},
+					error: function (error) {
+						console.error("Error saving answer:", error);
+					}
+				});
+			});
+			$("#btnSend").on("click", function () {
+				var messageContent = $("#textMessage").val();
+
+				self.sendingNewMessage(messageContent);
+
+				$("#textMessage").val("");
+			});
+			// Event handler for toggle chat button
+			$("#toggleChatButton").click(function () {
+				$(".chat").toggle();
+				if ($(".exPart").hasClass("col-lg-8")) {
+					$(".exPart").removeClass("col-lg-8").addClass("col-lg-12");
+					$("aside").removeClass("col-lg-4");
+					$("#toggleChatButton").text("Show Chat Room"); // Corrected .text() usage
+				} else {
+					$(".exPart").removeClass("col-lg-12").addClass("col-lg-8");
+					$("aside.chat").addClass("col-lg-4");
+					$("#toggleChatButton").text("Hidden  Chat Room"); // Corrected .text() usage
+				}
+			});
+
+		});
+
+
+
+		var roomIdFromModel = @Model.team.RoomId; 
+	</script>
+
+</body>
+
+</html>

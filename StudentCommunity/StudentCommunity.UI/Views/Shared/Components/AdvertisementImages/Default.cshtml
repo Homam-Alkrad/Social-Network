@@ -1,0 +1,27 @@
+﻿<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img class="d-block w-100" src="~/custom/images/group img.png" alt="First slide">
+			<div class="m-2 p-2">
+				<h4 class="text-dark text-center">واجهة الاعلانات المصورة</h4>
+				<p>استعد لرحلة التميز! قم بإطلاق إعلاناتك اليوم وافتح أبواب الفرص والتفوق.
+					بفضل إعلاناتك، ستبني هويتك التجارية وتتواصل مع جمهورك المستهدف بشكل فعّال. لا تدع الفرصة تفوتك، بل اترك بصمتك في عقول الناس وابدأ رحلتك نحو النجاح الاستثنائي!</p>
+				<p class="text-dark p-2 text-center"><b><a asp-action="CreateImageAdvertising" asp-controller="Advertisement">Start Now ! </a></b></p>
+			</div>
+		</div>
+		@foreach (var item in Model)
+		{
+			<div class="carousel-item">
+				<img style="max-height:200px;overflow:visible;" class="w-100" src="@item.ImagePhath" alt="...">
+				<div class="m-2 p-2">
+					<h6 class="text-dark text-center">@item.Title</h6>
+					<p style="text-align:right;">@item.Text</p>
+					@if (item.PhoneNumber!=null)
+					{					
+						<p class="text-dark p-2"><b>Phone Number: @item.PhoneNumber</b></p>
+					}
+				</div>
+			</div>
+		}
+	</div>
+</div>

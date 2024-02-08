@@ -1,0 +1,48 @@
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.deps.json
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.dll
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.pdb
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.AssemblyInfo.cs
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.dll
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\refint\StudentCommunity.Infrastructure.dll
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.pdb
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\ref\StudentCommunity.Infrastructure.dll
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.deps.json
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.dll
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.pdb
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.AssemblyInfo.cs
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.dll
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\refint\StudentCommunity.Infrastructure.dll
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.pdb
+C:\Users\user\source\repos\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\ref\StudentCommunity.Infrastructure.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.deps.json
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.pdb
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.AssemblyInfo.cs
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\refint\StudentCommunity.Infrastructure.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.pdb
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\ref\StudentCommunity.Infrastructure.dll
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.deps.json
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.dll
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\bin\Debug\net6.0\StudentCommunity.Infrastructure.pdb
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.AssemblyInfo.cs
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.dll
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\refint\StudentCommunity.Infrastructure.dll
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\StudentCommunity.Infrastructure.pdb
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.Infrastructure\obj\Debug\net6.0\ref\StudentCommunity.Infrastructure.dll

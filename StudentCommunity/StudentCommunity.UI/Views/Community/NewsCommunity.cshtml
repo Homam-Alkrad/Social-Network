@@ -1,0 +1,111 @@
+﻿@namespace StudentCommunity.UI.Models.PostModel
+@model PostUserViewModel
+@inject UserManager<ApplicationUser> UserManager
+@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@{
+	var user = await UserManager.GetUserAsync(User);
+	ViewData["Title"] = "News  Community";
+	Layout = "_Layout1";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+</head>
+<body>
+	<div class="col-lg-12 CommunityTitle">
+		<h5>
+			<i class="ti-home"></i>
+			News Community
+		</h5>
+	</div>
+	@if (await UserManager.IsInRoleAsync(user, "Admin"))
+	{
+		<div class="central-meta">
+			<div class="new-postbox">
+				<figure>
+					<img src="@Model.userView.ProfileImg" alt="">
+				</figure>
+				<div class="newpst-input">
+					@if (TempData.ContainsKey("OffensiveMessage"))
+					{
+						<div class="post-alert">
+							<span>@TempData["OffensiveMessage"]</span>
+							<span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+						</div>
+					}
+					<!-------------------------------------------->
+					<form asp-action="CreatePost" asp-controller="Post" method="post" enctype="multipart/form-data">
+						<div>
+							<input type="hidden" asp-for="postView.UserId" value="@Model.userView.UserId" />
+							<input type="hidden" asp-for="postView.returnUrl" value="NewsCommunity" />
+							<input type="hidden" asp-for="postView.IsNews" value=True />
+						</div>
+						<textarea rows="2" placeholder="write something" asp-for="postView.Content" class="post-content"></textarea>
+						<div class="attachments">
+							<ul>
+								<li>
+									<i class="fa fa-music"></i>
+									<label class="fileContainer">
+										<input type="file" asp-for="postView.PhotoFile">
+									</label>
+								</li>
+								<li>
+									<i class="fa fa-image"></i>
+									<label class="fileContainer">
+										<input type="file" asp-for="postView.PhotoFile">
+									</label>
+								</li>
+								<li>
+									<i class="fa fa-video-camera"></i>
+									<label class="fileContainer">
+										<input type="file" asp-for="postView.PhotoFile">
+									</label>
+								</li>
+								<li>
+									<i class="fa fa-camera"></i>
+									<label class="fileContainer">
+										<input type="file" asp-for="postView.PhotoFile">
+									</label>
+								</li>
+								<li>
+									<button type="submit" value="post" class="btn btn-primary mt-2">post</button>
+								</li>
+							</ul>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	}
+	<div class="loadMore">
+		<!-------------------------------------------->
+		@await Component.InvokeAsync("News")
+		<!-------------------------------------------->
+	</div>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Delete the Comment</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Are you Sure You Need To Delete This Employee ?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<a class="btn btn-primary save-changes-button" asp-controller="Post" asp-action="DeleteComment">Save Changes</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿@namespace StudentCommunity.UI.Models.AccountModel
+@model LoginViewModel
+
+@{
+	ViewData["Title"] = "Login";
+	Layout = "_LoginLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		.welcome {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			padding: 10% 0px;
+			color: white;
+		}
+	</style>
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="theme-layoutab-content">
+		<div class="container-fluid pdng0">
+			<div class="row merged py-3">
+				<div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+					<div class="land-featurearea" style="height:95vh;    box-shadow: 0 0 35px #e2e2e2;">
+						<div class="welcome px-3" style="text-align:left;">
+							<h2 class="py-3">Jordanian Student Community</h2>
+							<p class="py-3 text-white" style="font-size:20px;">
+								<span id="demo"></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-8 col-sm-6 col-xs-12">
+					<div class="login-reg-bg" style="height:95vh;">
+						<div class="log-reg-area sign p-3 py-5" style="height:100%;width:100%;">
+							<h2 class="log-title">Login</h2>
+							<form method="post" asp-action="Login">
+								<div class="form-group">
+									<input type="email" asp-for="Email" required="required" />
+									<label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
+								</div>
+								<div class="form-group">
+									<input type="password" asp-for="Password" required="required" />
+									<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+									<div asp-validation-summary="All" class="text-danger"></div>
+									<span class="text-danger">@ViewBag.Error</span>
+								</div>
+								<div class="form-group d-flex flex-row justify-content-between" style="width:100%;">
+									<div class="checkbox p-0 m-0">
+										<label>
+											<input type="checkbox" checked="checked" /><i class="check-box"></i>Always Remember Me.
+										</label>
+									</div>
+								</div>
+								<div class="submit-btns">
+									<input class="custom-btn" type="submit" value="Login">
+									<a class="already-have ml-5 mt-3" asp-action="Register" asp-controller="Account">I do not have an account.</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@section Scripts{
+		@{
+			await Html.RenderPartialAsync("_ValidationScriptsPartial");
+		}
+	}
+	<script>
+		var i = 0;
+		var txt = 'Welcome to Jordanian Student Community.  Join us today and play a vital role in creating a stronger, more interconnected Jordanian student community!';
+		var speed = 40;
+
+		function typeWriter() {
+			if (i < txt.length) {
+				var char = txt.charAt(i);
+				if (char === '.') {
+					document.getElementById("demo").innerHTML += "<br>";
+				} else {
+					document.getElementById("demo").innerHTML += char;
+				}
+				i++;
+				setTimeout(typeWriter, speed);
+			}
+		}
+		window.onload = function () {
+			typeWriter();
+		};
+	</script>
+</body>
+
+</html>

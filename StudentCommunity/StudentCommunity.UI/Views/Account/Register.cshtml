@@ -1,0 +1,152 @@
+﻿@namespace StudentCommunity.UI.Models.AccountModel
+@model RegisterViewModel
+
+@{
+	ViewData["Title"] = "Register";
+	Layout = "_LoginLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>Winku Social Network Toolkit</title>
+	<link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+	<script src="~/js/jquery-3.6.0.min.js"></script>
+	<style>
+		option{
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<!--<div class="se-pre-con"></div>-->
+	<div class="theme-layout">
+		<div class="container-fluid pdng0">
+			<div class="row merged py-3">
+				<div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+					<div class="land-featurearea" style="height:95vh;    box-shadow: 0 0 35px #e2e2e2;">
+						<div class="welcome px-3 py-5" style="text-align:left;">
+							<h2 class="py-3">Jordanian Student Community</h2>
+							<p class="py-3 text-white" style="font-size:20px;">
+								<span id="demo"></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-8 col-sm-6 col-xs-12">
+					<div class="login-reg-bg" style="height:95vh;">
+						<div class="log-reg-area sign pt-5" style="height:100%; width:100%;">
+							<h2 class="log-title">Register</h2>
+							<form method="post" asp-action="Register" style="height:80%;">
+								<div class="d-flex flex-row">
+									<div class="form-group">
+										<input type="text" asp-for="FirstName" required="required" />
+										<label class="control-label" for="input"> First Name</label><i class="mtrl-select"></i>
+										<span class="text-danger" asp-validation-for="FirstName"></span>
+									</div>
+									<div class="form-group">
+										<input type="text" asp-for="LastName" required="required" />
+										<label class="control-label" for="input">Last Name</label><i class="mtrl-select"></i>
+										<span class="text-danger" asp-validation-for="LastName"></span>
+									</div>
+								</div>
+								<div class="form-group">
+									<select asp-for="universityId" asp-items="@(new SelectList(ViewBag.Universities, "universityId", "universityName"))" class="form-select" aria-label="Default select example" style="color:#b7bfd3;" required>
+										<option value="">Select University</option>
+									</select>
+									<span class="text-danger" asp-validation-for="universityId"></span>
+								</div>
+								<div class="d-flex flex-row">
+									<div class="form-group">
+										<select id="CollegeList" class="form-control mb-2" asp-for="collegeId" asp-items="@(new SelectList(ViewBag.Colleges, "Id", "Name"))" required style="color:#b7bfd3;">
+											<option value="" style="color:#b7bfd3;">Select College</option>
+										</select>
+										<span class="text-danger" asp-validation-for="collegeId"></span>
+									</div>
+									<div class="form-group">
+										<select id="MajorList" class="form-control mb-2" asp-for="majorId" required style="color:#b7bfd3;">
+											<option value="">Select Major</option>
+										</select>
+										<span class="text-danger" asp-validation-for="majorId"></span>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="email" asp-for="Email" required="required" />
+									<label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
+									<span class="text-danger" asp-validation-for="Email"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" asp-for="Password" required="required" />
+									<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+									<span class="text-danger" asp-validation-for="Password"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" asp-for="ConfirmPassword" required="required" />
+									<label class="control-label" for="input">Confirm Password</label><i class="mtrl-select"></i>
+									<span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+								</div>
+								<div class="submit-btns d-flex flex-row justify-content-between " style="width:100%;">
+									<input class="mtr-btn signup custom-btn" type="submit" value="Register">
+									<a class="already-have ml-5 mt-3" asp-action="Login" asp-controller="Account">Already have an account</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@section Scripts{
+		@{
+			await Html.RenderPartialAsync("_ValidationScriptsPartial");
+		}
+	}
+	<script>
+		$('#CollegeList').change(function () {
+			var collegeId = $(this).val();
+			if (collegeId) {
+				$.ajax({
+					url: '/Account/GetAllMajor',
+					data: { Id: collegeId },
+					success: function (data) {
+						var majorList = $('#MajorList');
+						majorList.empty();
+						majorList.append('<option value="">Select Major</option>');
+						$.each(data, function () {
+							majorList.append('<option value="' + this.id + '">' + this.name + '</option>');
+						});
+					}
+				});
+			} else {
+				$('#MajorList').empty().append('<option value="">Select Major</option>');
+			}
+		});
+		var i = 0;
+		var txt = 'Welcome to Jordanian Student Community.  Join us today and play a vital role in creating a stronger, more interconnected Jordanian student community!';
+		var speed = 40;
+
+		function typeWriter() {
+			if (i < txt.length) {
+				var char = txt.charAt(i);
+				if (char === '.') {
+					// If the character is a period, add a line break
+					document.getElementById("demo").innerHTML += "<br>";
+				} else {
+					document.getElementById("demo").innerHTML += char;
+				}
+				i++;
+				setTimeout(typeWriter, speed);
+			}
+		}
+
+		// Start the typewriter effect when the page loads
+		window.onload = function () {
+			typeWriter();
+		};
+	</script>
+
+</body>
+</html>

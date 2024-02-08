@@ -1,0 +1,124 @@
+﻿<head>
+	<link href="~/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+	<link href="~/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<style>
+		.blue {
+			color: blue;
+		}
+	</style>
+</head>
+@foreach (var item in Model)
+{
+	<div class="central-meta item mb-1">
+		<div class="user-post">
+			<div class="friend-info">
+
+				<figure>
+					<img src="@item.User.ProfileImg" alt="">
+				</figure>
+				<div class="friend-name">
+					<ins class="d-flex flex-row justify-content-between">
+						<a href="time-line.html" title="">@item.User.FullName</a>
+						@if (item.majorId != null)
+						{
+							<a>@item.User.Major.Name</a>
+						}
+						else if (item.universityId != null)
+						{
+							<a>@item.User.university.universityName</a>
+						}
+						else if (item.groupId != null)
+						{
+							<a>@item.group.Name</a>
+						}
+						else if (item.IsNews==true)
+						{
+							<a>Student News</a>
+						}
+						else if (item.IsForLanguage ==true)
+						{
+							<a>Language Community</a>
+						}
+						else
+						{
+							<a>Students Community</a>
+						}
+						
+					</ins>
+					<span>@item.PublicationTime.ToString("MMM-dd HH:mm")</span>
+				</div>
+				<div>
+				</div>
+			</div>
+			<div class="description">
+				<p class="PostContiant">
+					@item.Content
+				</p>
+				<div class="post-meta" style="margin-bottom:15px;">
+					<img style="max-height: 290px;" src="@item.PhtotPath" />
+				</div>
+			</div>
+			<div class="container col-md-12 d-flex flex-row justify-content-between  border-top pt-3">
+				<div class="container col-md-12 d-flex flex-row justify-content-around">
+					<a href="javascript:void(0);" onclick="toggleEditSection(@item.PostId)">Edit</a>
+					<a href="javascript:void(0);" onclick="deletePost(@item.PostId)">Delete</a>
+				</div>
+			</div>
+			<div class="comment-section edit-section" id="comment-section-@item.PostId" style="display: none;">
+				<div class="d-none d-lg-flex flex-row justify-content-between col-lg-12 mt-2 p-0">
+					<input type="text" id="edit-input-@item.PostId" class="form-control col-lg-9" placeholder="Write a comment">
+					<button class="btn btn-primary col-lg-2" style="font-size: 10px;" onclick="editPost(@item.PostId)">Edit</button>
+				</div>
+			</div>
+			<div class="container col-lg-12 col-sm-12 col-md-12 d-flex flex-column justify-content-between border-top pt-3">
+				<div class="container col-md-12 d-flex flex-row justify-content-between">
+					<span class="like">
+						<a href="#">
+							<i class="fa fa-thumbs-o-up mr-2" aria-hidden="true"></i><ins>@item.Likes</ins>
+						</a>
+					</span>
+					<span class="like">
+						<button type="button" style="border: none;background: transparent;color: #545454;" onclick="toggleCustomSection(@item.PostId)">
+							<i class="fa fa-comments mr-2" aria-hidden="true"></i>
+						</button>
+					</span>
+					<span class="dislike">
+						<a href="#">
+							<i class="fa fa-thumbs-o-down mr-2" aria-hidden="true"></i><ins>@item.Dislikes</ins>
+						</a>
+					</span>
+				</div>
+				<div id="custom-section-@item.PostId" style="display: none;">
+					<div class="comment-scrollbar d-block mt-4 comment-container" style="max-height: 200px; overflow-y: scroll;">
+						@await Component.InvokeAsync("Comment", item.PostId)
+					</div>
+				</div>
+			</div>
+
+			<script>
+				function toggleCustomSection(postId) {
+					const customSection = document.getElementById(`custom-section-${postId}`);
+
+					if (customSection.style.display === "none" || customSection.style.display === "") {
+						customSection.style.display = "block";
+					} else {
+						customSection.style.display = "none";
+					}
+				}
+			</script>
+
+			<script>
+				function toggleCommentSection(postId) {
+					const commentSection = document.getElementById(`comment-section-${postId}`);
+
+					if (commentSection.style.display === "none" || commentSection.style.display === "") {
+						commentSection.style.display = "block";
+					} else {
+						commentSection.style.display = "none";
+					}
+				}
+			</script>
+		</div>
+	</div>
+}
+

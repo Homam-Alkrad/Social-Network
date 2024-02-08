@@ -1,0 +1,12 @@
+﻿@foreach (var item in Model)
+{
+    <li id="notification_@item.Id">
+        <div class="activity-meta">
+            <i>@item.dateTime.ToString("dd MMM HH:mm")</i>
+            <span><a href="#" title="">@item.Text</a></span>
+            <h6>
+                <a href="#" onclick="deleteNotification(@item.Id)">Delete</a>
+            </h6>
+        </div>
+    </li>
+}

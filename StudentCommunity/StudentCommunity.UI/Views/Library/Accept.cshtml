@@ -1,0 +1,114 @@
+﻿@model IEnumerable<StudentCommunity.UI.Data.LibraryResource>
+@{
+	Layout = "";
+}
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/strip.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+	<style>
+		th{
+			text-align:center;
+		}
+		td{
+			width:20%;
+			text-align:center;
+		}
+		a{
+			text-decoration:underline;
+		}
+		a:hover{
+			color:white;
+		}
+	</style>
+</head>
+<body style="background-color:#088dcd;">
+	<section>
+		<div class="gap color-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="faq-top">
+							<h1>
+								Student Library and Study Center
+							</h1>
+							<h2>Acceptance Center</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="container-fluid col-lg-11 my-3">
+		@if(!Model.Any())
+		{
+			<h2 style="color:white;">
+				No Resource Need To Be Acceptance <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+			</h2>
+			<a asp-action="Index" asp-controller="Library" class="text-white bold mt-3">
+				<b>
+					<i class="fa fa-hand-o-left mr-2" aria-hidden="true"></i>
+					 Back to Library
+				</b>
+			</a>
+		}
+		else
+		{
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							<h3>@Html.DisplayNameFor(model => model.Name)</h3>
+						</th>
+						<th>
+							<h3>@Html.DisplayNameFor(model => model.FilePath)</h3>
+						</th>
+						<th>
+							<h3>@Html.DisplayNameFor(model => model.PhotoPath)</h3>
+						</th>
+						<th>
+							<h3>@Html.DisplayNameFor(model => model.Description)</h3>
+						</th>
+						<th>
+							<h3>Action</h3>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								@Html.DisplayFor(modelItem => item.Name)
+							</td>
+							<td>
+								<a title="" href="@item.FilePath" download>Download the file to scan</a>
+							</td>
+							<td>
+								<img src="@item.PhotoPath" style="width:100px;height:100px;">
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.Description)
+							</td>
+							<td>
+								@Html.ActionLink("Accept", "AcceptResource", new { Id=item.Id  }) |
+								@Html.ActionLink("Decline", "Decline", new { Id=item.Id })
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+
+		}
+	</div>
+</body>
+</html>

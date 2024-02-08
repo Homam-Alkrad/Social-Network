@@ -1,0 +1,93 @@
+﻿@using StudentCommunity.UI.Models.Competition
+@model QuestionsCompetitionModel
+@{
+	Layout = "_Layout2";
+	ViewData["Title"] = "Questions  Managment";
+
+}
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+</head>
+<body>
+	<section>
+		<div class="gap gray-bg py-2">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" id="page-contents">
+							<div class="col-lg-12" style="background-color: #fdfdfd;">
+								<div class="m-2">
+									<h4 class="p-2">Questions For this Competition</h4>
+								</div>
+								<div class="loadMore p-3">
+									<form asp-controller="Competition" asp-action="AddQuestions" method="post">
+										@Html.AntiForgeryToken()
+
+										<table id="myTable" class="table">
+											<thead>
+												<tr>
+													<th style="text-align: center;">
+														#
+													</th>
+													<th style="text-align: center;">
+														Question Title
+													</th>
+													<th style="text-align: center;">
+														Question Text
+													</th>
+													<th style="text-align: center;">
+														Question Level
+													</th>
+													<th style="text-align: center;">
+														Add/Remove
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												@for (int i = 0; i < Model.Questions.Count; i++)
+												{
+													var item = Model.Questions[i];
+													<tr>
+														<td>
+															@Html.DisplayFor(modelItem => item.Id)
+														</td>
+														<td>
+															@Html.DisplayFor(modelItem => item.QuestionTitle)
+														</td>
+														<td>
+															@Html.DisplayFor(modelItem => item.QuestionText)
+														</td>
+														<td>
+															@Html.DisplayFor(modelItem => item.QuestionLevel)
+														</td>
+														<td>
+															<input type="hidden" name="Questions[@i].Id" value="@item.Id">
+															<input type="checkbox" class="form-check-input" name="Questions[@i].IsSelected" asp-for="@item.IsSelected">
+														</td>
+													</tr>
+												}
+											</tbody>
+										</table>
+										<input type="hidden" name="competitionId" value="@Model.competitionId">
+										<input type="submit" class="btn btn-primary my-5" value="Add Selected Question">
+									</form>
+									<a asp-action="Index" asp-controller="Competition" style="color:blue;">Back</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		$('#myTable').DataTable({});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+﻿@using Microsoft.AspNetCore.Mvc;
+@using StudentCommunity.UI.Data;
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<ApplicationUser> userManegar;
+@model IEnumerable<Comment>
+<html>
+<head>
+	<style>
+		/* Chat containers */
+		.Comment {
+			border: 2px solid #dedede;
+			background-color: #f1f1f1;
+			border-radius: 5px;
+			padding: 10px;
+			margin: 10px 0;
+		}
+
+		/* Darker chat container */
+		.darker {
+			border-color: #ccc;
+			background-color: #ddd;
+		}
+
+		/* Clear floats */
+		.Comment::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		/* Style images */
+		.Comment img {
+			float: left;
+			max-width: 60px;
+			width: 100%;
+			margin-right: 20px;
+			border-radius: 50%;
+		}
+
+			/* Style the right image */
+			.Comment img.right {
+				float: right;
+				margin-left: 20px;
+				margin-right: 0;
+			}
+
+		/* Style time text */
+		.time-right {
+			float: right;
+			color: #aaa;
+		}
+
+		/* Style time text */
+		.time-left {
+			float: left;
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+	@{
+		var user = await userManegar.GetUserAsync(User);
+	}
+	@foreach (var item in Model)
+	{
+		if (item.User.Id == user.Id)
+		{
+			<div class="Comment" id="comment-@item.CommentId">
+				<img src="@item.User.ProfileImg" title="@item.User.FullName" alt="Avatar">
+				<p style="font-size: 14px;">
+					@item.Content
+				</p>
+				<span class="time-left" style="font-size: 6px;">
+					@item.CommentTime
+					<a class="ml-4" style="font-size: 8px;" href="javascript:void(0);" onclick="deleteComment(@item.CommentId)">delete</a>
+				</span>
+			</div>
+
+		}
+		else
+		{
+			<div class="Comment darker">
+				<img src="@item.User.ProfileImg" title="@item.User.FullName" alt="Avatar" class="right">
+				<p style="font-size:14px;">
+					@item.Content
+				</p>
+				<span class="time-right" style="font-size:6px;">@item.CommentTime</span>
+			</div>
+		}
+	}
+</body>
+</html>

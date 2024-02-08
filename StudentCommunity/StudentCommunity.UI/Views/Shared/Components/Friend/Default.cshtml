@@ -1,0 +1,13 @@
+﻿@using StudentCommunity.UI.Data
+@model IEnumerable<ApplicationUser>
+
+@foreach (var item in Model)
+{
+    <li class="user-item clearfix" id="user" data-user-id="@item.Id" data-user-email="@item.Email" data-item-fullname="@item.FullName" data-item-profileimg="@item.ProfileImg">
+        <img src="@item.ProfileImg" alt="avatar">
+        <div class="about">
+            <div class="name">@item.FullName</div>
+            <div class="status"> <i class="fa fa-circle offline"></i> Last seen: 2 hours ago</div>
+        </div>
+    </li>
+}

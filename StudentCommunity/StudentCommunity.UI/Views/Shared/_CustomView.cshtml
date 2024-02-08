@@ -1,0 +1,428 @@
+﻿@using StudentCommunity.UI.Data;
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<ApplicationUser> userManegar;
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link rel="icon" href="~/custom/images/fav.png" type="image/png" sizes="16x16">
+
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<style>
+		.comment-scrollbar::-webkit-scrollbar {
+			width: 0px; /* Adjust the width of the scroll bar */
+		}
+
+		.comment-scrollbar::-webkit-scrollbar-thumb {
+			background-color: #007bff; /* Change the thumb (draggable part) color */
+			border-radius: 6px; /* Adjust the border radius for a rounded look */
+		}
+
+		.comment-scrollbar::-webkit-scrollbar-track {
+			background-color: #f1f1f1; /* Change the track (non-draggable part) color */
+		}
+	</style>
+</head>
+<body>
+	<div class="theme-layout">
+		<div class="topbar stick">
+			<div class="logo">
+				<a title="" href="newsfeed.html">
+					<img src="~/custom/images/resources/logo4.png" />
+				</a>
+			</div>
+
+			<div class="top-area">
+				<div class="top-search">
+					<form method="post" class="">
+						<input type="text" placeholder="Search Friend">
+						<button data-ripple><i class="ti-search"></i></button>
+					</form>
+				</div>
+				<ul class="setting-area">
+					<li><a href="newsfeed.html" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+					<li>
+						<a href="#" title="Notification" data-ripple="">
+							<i class="ti-bell"></i><span>20</span>
+						</a>
+						<div class="dropdowns">
+							<span>4 New Notifications</span>
+							<ul class="drops-menu">
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-1.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>sarah Loren</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag green">New</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-2.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Jhon doe</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag red">Reply</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-3.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Andrew</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag blue">Unseen</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-4.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Tom cruse</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag">New</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-5.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Amy</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag">New</span>
+								</li>
+							</ul>
+							<a href="notifications.html" title="" class="more-mesg">view more</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span>12</span></a>
+						<div class="dropdowns">
+							<span>5 New Messages</span>
+							<ul class="drops-menu">
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-1.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>sarah Loren</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag green">New</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-2.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Jhon doe</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag red">Reply</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-3.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Andrew</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag blue">Unseen</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-4.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Tom cruse</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag">New</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-5.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Amy</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag">New</span>
+								</li>
+							</ul>
+							<a href="messages.html" title="" class="more-mesg">view more</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
+						<div class="dropdowns languages">
+							<a href="#" title=""><i class="ti-check"></i>English</a>
+							<a href="#" title="">Arabic</a>
+							<a href="#" title="">Dutch</a>
+							<a href="#" title="">French</a>
+						</div>
+					</li>
+				</ul>
+				<div class="user-img">
+					<img src="images/resources/admin.jpg" alt="">
+					<div class="user-setting">
+					</div>
+				</div>
+				<span class="ti-menu main-menu" data-ripple=""></span>
+			</div>
+		</div>
+
+		<div class="container p-1 m-1 col-lg-12">
+			<main role="main" class="p-0 m-0">
+				@RenderBody()
+			</main>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4">
+						<div class="widget">
+							<div class="foot-logo">
+								<div class="logo">
+									<a href="index-2.html" title=""><img src="~/custom/images/logo.png" alt=""></a>
+								</div>
+								<p>
+									The trio took this simple idea and built it into the world’s leading carpooling platform.
+								</p>
+							</div>
+							<ul class="location">
+								<li>
+									<i class="ti-map-alt"></i>
+									<p>33 new montgomery st.750 san francisco, CA USA 94105.</p>
+								</li>
+								<li>
+									<i class="ti-mobile"></i>
+									<p>+1-56-346 345</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>follow</h4></div>
+							<ul class="list-style">
+								<li><i class="fa fa-facebook-square"></i> facebook</li>
+								<li><i class="fa fa-twitter-square"></i>twitter</li>
+								<li><i class="fa fa-instagram"></i>instagram</li>
+								<li><i class="fa fa-google-plus-square"></i>Google+</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>Navigate</h4></div>
+							<ul class="list-style">
+								<li><a href="about.html" title="">about us</a></li>
+								<li><a href="contact.html" title="">contact us</a></li>
+								<li><a href="terms.html" title="">terms & Conditions</a></li>
+								<li><a href="#" title="">RSS syndication</a></li>
+								<li><a href="sitemap.html" title="">Sitemap</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>useful links</h4></div>
+							<ul class="list-style">
+								<li><a href="#" title="">leasing</a></li>
+								<li><a href="#" title="">submit route</a></li>
+								<li><a href="#" title="">how does it work?</a></li>
+								<li><a href="#" title="">agent listings</a></li>
+								<li><a href="#" title="">view All</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer><!-- footer -->
+	</div>
+	<div class="side-panel">
+		<h4 class="panel-title">General Setting</h4>
+		<form method="post">
+			<div class="setting-row">
+				<span>use night mode</span>
+				<input type="checkbox" id="nightmode1" />
+				<label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Notifications</span>
+				<input type="checkbox" id="switch22" />
+				<label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Notification sound</span>
+				<input type="checkbox" id="switch33" />
+				<label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>My profile</span>
+				<input type="checkbox" id="switch44" />
+				<label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Show profile</span>
+				<input type="checkbox" id="switch55" />
+				<label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+		</form>
+		<h4 class="panel-title">Account Setting</h4>
+		<form method="post">
+			<div class="setting-row">
+				<span>Sub users</span>
+				<input type="checkbox" id="switch66" />
+				<label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>personal account</span>
+				<input type="checkbox" id="switch77" />
+				<label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Business account</span>
+				<input type="checkbox" id="switch88" />
+				<label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Show me online</span>
+				<input type="checkbox" id="switch99" />
+				<label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Delete history</span>
+				<input type="checkbox" id="switch101" />
+				<label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Expose author name</span>
+				<input type="checkbox" id="switch111" />
+				<label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+		</form>
+	</div>
+	<script>
+		function likePost(event, postId) {
+			event.preventDefault();
+
+			$.ajax({
+				type: "POST",
+				url: "/Post/Like",
+				data: { postId: postId },
+				success: function (response) {
+					$(event.target).closest('.like').find('ins').text(response.likes);
+				},
+				error: function () {
+					alert("Please choose either like or dislike.");
+				}
+			});
+		}
+		function dislikePost(event, postId) {
+			event.preventDefault();
+
+			$.ajax({
+				type: "POST",
+				url: "/Post/Dislike",
+				data: { postId: postId },
+				cache: false, // Disable caching
+				success: function (response) {
+					// Find the ins element within the same post container and update it
+					$(event.target).closest('.dislike').find('ins').text(response.dislikes);
+				},
+				error: function () {
+					alert("Please choose either like or dislike.");
+				}
+			});
+
+		}
+		function postComment(postId) {
+			const commentInput = $(`#comment-input-${postId}`);
+			const commentText = commentInput.val();
+
+			const data = {
+				Content: commentText,
+				PostId: postId,
+			};
+
+			$.ajax({
+				type: "POST",
+				url: "/Post/CreateComment",
+				data: JSON.stringify(data),
+				contentType: "application/json",
+				success: function (response) {
+					if (response.success) {
+						commentInput.val("");
+						appendComment(response.comment);
+					} else {
+					}
+				},
+				error: function (error) {
+				}
+			});
+		}
+		function appendComment(comment) {
+			console.log(comment.content);
+			const commentCard = `
+								<div class="card bg-light p-2">
+									<div class="card-header d-flex flex-row p-1 py-0">
+														<img src="${comment.user.profileImg}" class="card-img" style="width:30px;height:30px;border-radius:50%;">
+										<p class="card-title ml-2">${comment.user.fullName}</p>
+									</div>
+									<div class="card-body m-0 py-1">
+														${comment.content}
+									</div>
+									<div class="card-footer m-0 bg-light border-0 py-0" style="font-size:8px;">
+														${comment.commentTime}
+									</div>
+								</div>`;
+			$(".comment-container").append(commentCard);
+		}
+		function toggleCommentSection(postId) {
+			const commentSection = document.getElementById(`comment-section-${postId}`);
+
+			if (commentSection.style.display === "none" || commentSection.style.display === "") {
+				commentSection.style.display = "block";
+			} else {
+				commentSection.style.display = "none";
+			}
+		}
+	</script>
+	<!-- side panel -->
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="~/custom/js/main.min.js"></script>
+	<script src="~/custom/js/script.js"></script>
+	<script src="~/custom/js/map-init.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+
+
+
+</body>
+</html>

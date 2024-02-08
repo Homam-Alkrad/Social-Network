@@ -1,0 +1,12 @@
+﻿@using StudentCommunity.UI.Data
+@model IEnumerable<Group>
+
+@foreach (var item in Model.OrderBy(x => x.Name))
+{
+    <li data-user-id="@item.Id">
+        <div class="friendz-meta">
+            <a asp-action="Group" asp-controller="Groups" asp-route-groupId="@item.Id">@item.Name</a>
+            <a asp-action="JoinGroup" asp-controller="Groups" asp-route-groupId="@item.Id" class="add-friend-link mt-2" style="color: blue; border: none;">Join This Group</a>
+        </div>
+    </li>
+}

@@ -1,0 +1,52 @@
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\MLModel.zip
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.deps.json
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.dll
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.pdb
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.AssemblyInfo.cs
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.dll
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\refint\DataTraining2.dll
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.pdb
+C:\Users\user\OneDrive\Desktop\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\ref\DataTraining2.dll
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\bin\Debug\net6.0\MLModel.zip
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.deps.json
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.dll
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.pdb
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.AssemblyInfo.cs
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.dll
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\refint\DataTraining2.dll
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.pdb
+C:\Users\user\source\repos\StudentCommunity\DataTraining2\obj\Debug\net6.0\ref\DataTraining2.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\MLModel.zip
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.deps.json
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.pdb
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.AssemblyInfo.cs
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\refint\DataTraining2.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.pdb
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\ref\DataTraining2.dll
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\MLModel.zip
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.deps.json
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.dll
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\bin\Debug\net6.0\DataTraining2.pdb
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.AssemblyInfo.cs
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.dll
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\refint\DataTraining2.dll
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\DataTraining2.pdb
+C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\DataTraining2\obj\Debug\net6.0\ref\DataTraining2.dll

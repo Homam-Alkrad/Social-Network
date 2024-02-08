@@ -1,0 +1,184 @@
+﻿@using StudentCommunity.UI.Models.Competition
+@model IEnumerable<TeamsViewModel>
+@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@inject UserManager<ApplicationUser> UserManager
+@{
+	var user = await UserManager.GetUserAsync(User);
+	Layout = "_Layout2";
+
+	ViewData["Title"] = "Register  Competition";
+
+}
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<section>
+		<div class="gap gray-bg py-2">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" id="page-contents">
+							<div class="col-lg-12" style="background-color: #fdfdfd;">
+								<div class="loadMore p-3">
+									<div class="custom-alert col-lg-5 border border-4">
+										<span id="error-message" class="text-center"></span>
+										<span class="close-btn" onclick="closeAlert();">&times;</span>
+									</div>
+									<table id="myTable" class="table">
+										<thead>
+											<tr>
+												<th style="width:10%;">
+													#
+												</th>
+												<th>
+													Name
+												</th>
+												<th>
+													Members
+												</th>
+												<th style="width:15%;">
+													Action
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach (var item in Model)
+											{
+												
+												<tr>
+													<td style="width:10%;">
+														@Html.DisplayFor(modelItem => item.Id)
+													</td>
+													<td>
+														@Html.DisplayFor(modelItem => item.Name)
+													</td>
+													<td>
+														@foreach (var std in item.students)
+														{
+															if (user.Id == std.Id)
+															{
+															
+																<p style="font-size:17px;"><b class="text-black">@std.FullName</b></p>
+															}
+															else
+															{
+																<p>@std.FullName</p>
+															}
+
+														}
+													</td>
+													<td style="width:15%;">
+														<a href="#" class="join-link" data-team-id="@item.Id" data-competition-id="@ViewBag.competitionId">Join</a>
+														@if (item.IsUserInThisTeam)
+														{
+															<a href="#" class="leaving-link ml-5" data-team-id="@item.Id" data-competition-id="@ViewBag.competitionId">Leaving</a>
+														}
+													</td>
+
+												</tr>
+											}
+										</tbody>
+									</table>
+									<div class="col-lg-12 d-flex flex-row justify-content-end mt-3">
+										<form id="createTeamForm" class="col-lg-5 d-flex flex-row" asp-controller="Competition" asp-action="CreateTeam" method="post">
+											<input type="text" id="teamNameInput" class="form-control" name="teamName" placeholder="Create New Team" />
+											<input type="hidden" value="@ViewBag.competitionId" id="CompetationIdInput" name="competitionId" />
+											<button type="button" onclick="submitForm()">Create</button>
+										</form>
+									</div>
+									<a asp-action="Index" asp-asp-controller="Competition" style="color:blue;">Back</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		$('#myTable').DataTable({});
+		function createTeam(teamName, competitionId) {
+			$.ajax({
+				type: "POST",
+				url: "/Competition/CreateTeam",
+				data: { teamName: teamName, competitionId: competitionId },
+				success: function (teamData) {
+					if (teamData.success) {
+						console.log("Team created successfully");
+						window.location.href = "/Competition/Teams";
+					} else {
+						console.error("Error creating team:", teamData.errorMessage);
+						$(".custom-alert").text(teamData.errorMessage).css("display", "block");
+					}
+				},
+				error: function (error) {
+					console.error("Error:", error);
+				}
+			});
+		}
+
+		function submitForm() {
+			var teamName = $("#teamNameInput").val();
+			var competitionId = $("#CompetationIdInput").val();
+
+			createTeam(teamName, competitionId);
+		}
+
+
+		$(".join-link").click(function () {
+			var teamId = $(this).data("team-id");
+			var competitionId = $(this).data("competition-id");
+
+			$.ajax({
+				type: "POST",
+				url: "/Competition/JoinTeam",
+				data: { teamId: teamId, competitionId: competitionId },
+				success: function (data) {
+					if (data.success) {
+						window.location.href = "/Competition/Teams/" + data.competitionId;
+					} else {
+						$(".custom-alert").text(data.errorMessage).css("display", "block");
+					}
+				},
+				error: function (error) {
+					console.error("Error joining team:", error);
+				}
+			});
+		});
+
+		$(".leaving-link").click(function () {
+			var teamId = $(this).data("team-id");
+			var competitionId = $(this).data("competition-id");
+
+			$.ajax({
+				type: "POST",
+				url: "/Competition/LeaveTeam",
+				data: { teamId: teamId, competitionId: competitionId },
+				success: function (data) {
+					if (data.success) {
+						window.location.href = "/Competition/Teams/" + data.competitionId;
+					} else {
+						$(".custom-alert").text(data.errorMessage).css("display", "block");
+					}
+				},
+				error: function (error) {
+				}
+			});
+		});
+
+		function closeAlert() {
+			$(".custom-alert").css("display", "none");
+		}
+	</script>
+</body>
+</html>
+

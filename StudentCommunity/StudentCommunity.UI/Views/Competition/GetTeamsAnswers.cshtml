@@ -1,0 +1,234 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@using StudentCommunity.UI.Models.Competition
+@model List<EvaluateViewMode>
+@inject UserManager<ApplicationUser> UserManager
+@{
+	Layout = "";
+	var user = await UserManager.GetUserAsync(User);
+	ViewData["Title"] = "Evaluate Team Answers";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link rel="icon" href="~/custom/images/fav.png" type="image/png" sizes="16x16">
+
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/strip.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+	<style>
+		body {
+			overflow-y: auto;
+		}
+
+			body::-webkit-scrollbar,
+			.exam::-webkit-scrollbar,
+			.chat::-webkit-scrollbar,
+			.chat-history::-webkit-scrollbar {
+				width: 12px;
+			}
+
+			body::-webkit-scrollbar-thumb,
+			.exam::-webkit-scrollbar-thumb,
+			.chat::-webkit-scrollbar-thumb,
+			.chat-history::-webkit-scrollbar-thumb {
+				background-color: transparent;
+				border-radius: 6px;
+			}
+
+			body::-webkit-scrollbar-track,
+			.exam::-webkit-scrollbar-track,
+			.chat::-webkit-scrollbar-track,
+			.chat-history::-webkit-scrollbar-track {
+				background-color: transparent;
+			}
+
+		.exam {
+			overflow-y: auto;
+			max-height: 100vh;
+		}
+
+		.chat {
+			position: fixed;
+			top: 0;
+			right: 0;
+			height: 100vh;
+			overflow-y: auto;
+			border: 1px solid;
+		}
+
+		.blog-sec {
+			display: flex;
+		}
+
+		ul.list-unstyled {
+		}
+
+		ul#list {
+		}
+
+		li.sender-message {
+			background-color: #e0e0e0;
+			padding: 10px 20px 10px 0px;
+			margin-bottom: 10px;
+			margin-left: 30px;
+			border-radius: 5px;
+			max-width: 80%;
+			word-wrap: break-word;
+			text-align: right;
+			position: relative;
+			left: 10%;
+		}
+
+		li.receiver-message {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			max-width: 80%;
+			word-wrap: break-word;
+			align-self: flex-end;
+		}
+
+		.timer {
+			font-size: 20px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="theme-layout">
+		<section>
+			<div class="p-2">
+				<div class="container-fluid">
+					<div class="row" id="page-contents">
+						<div class="col-lg-12 exam">
+							<div class="blog-sec">
+								<div class="col-lg-12">
+									<div class="central-meta">
+										<div class="editing-info">
+											@if (Model.Any())
+											{
+												int questionCount = 0;
+												<form class="answer-form" asp-action="UpdateMark" method="post">
+													<div class="form-group">
+														@for (int i = 0; i < Model.Count; i++)
+														{
+															<div>
+																<h4>
+																	<span>@(i + 1). </span> @Model[i].question.QuestionTitle
+																</h4>
+															</div>
+															<div class="d-flex flex-row justify-content-between">
+																<p class="ml-4">
+																	<i class="ti-info-alt"></i> @Model[i].question.QuestionText
+																</p>
+																<span>@Model[i].question.QuestionLevel</span>
+															</div>
+															<div class="mt-3">
+																<textarea name="models[@i].answer" class="form-control border border-2 p-2" ty>@Model[i].answer</textarea>
+															</div>
+															<div class="col-lg-12 row my-3">
+																<fieldset disabled class="col-lg-1">
+																	<div class="">
+																		@if (Model[i].question.QuestionLevel == StudentCommunity.UI.Data.LevelEnum.Easy)
+																		{
+																			<input type="text" id="disabledTextInput" class="form-control" placeholder="/ 2">
+																		}
+																		else if (Model[i].question.QuestionLevel == StudentCommunity.UI.Data.LevelEnum.Medium)
+																		{
+																			<input type="text" id="disabledTextInput" class="form-control" placeholder="/ 7">
+																		}
+																		else
+																		{
+																			<input type="text" id="disabledTextInput" class="form-control"placeholder="/ 10">
+																		}
+																	</div>
+																</fieldset>
+																<input type="text" name="models[@i].mark" class="form-control col-lg-3 mark-input" placeholder="Mark" value="@Model[i].mark">
+																<span data-level="@Model[i].question.QuestionLevel"></span>
+																<span class="errorMark text-danger m-3 p-3"></span>
+																<input type="hidden" name="models[@i].Id" value="@Model[i].Id">
+															</div>
+														}
+													</div>
+													<div>
+														<input type="submit" value="Submit" class="btn btn-primary">
+													</div>
+												</form>
+											}
+											else
+											{
+												<h3>This team did not answer any questions</h3>
+											}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="~/js/jquery-3.7.0.js"></script>
+	<script src="~/custom/js/main.min.js"></script>
+	<script src="~/custom/js/strip.pkgd.min.js"></script>
+	<script src="~/custom/js/script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Selecting mark input fields by class name
+			var markInputs = document.querySelectorAll('.mark-input');
+			var errorSpans = document.querySelectorAll('.errorMark');
+
+			markInputs.forEach(function (input, index) {
+				input.addEventListener('blur', function () {
+					var markValue = parseInt(this.value);
+					var level = this.nextElementSibling.getAttribute('data-level').toLowerCase();
+					var errorSpan = errorSpans[index];
+
+					if (isNaN(markValue) || markValue < 0) {
+						errorSpan.textContent = 'Please enter a valid positive number for the mark.';
+						this.value = '';
+					} else {
+						if (level === 'easy') {
+							if (markValue < 0 || markValue > 2) {
+								errorSpan.textContent = 'Marks for easy questions should be between 0 and 2.';
+								this.value = '';
+							} else {
+								errorSpan.textContent = '';
+							}
+						} else if (level === 'medium') {
+							if (markValue < 0 || markValue > 7) {
+								errorSpan.textContent = 'Marks for easy questions should be between 0 and 7.';
+								this.value = '';
+							} else {
+								errorSpan.textContent = '';
+							}
+						} else if (level === 'hard') {
+							if (markValue < 0 || markValue > 10) {
+								errorSpan.textContent = 'Marks for easy questions should be between 0 and 10.';
+								this.value = '';
+							} else {
+								errorSpan.textContent = '';
+							}
+						} else {
+							errorSpan.textContent = 'Invalid question level.';
+							this.value = '';
+						}
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

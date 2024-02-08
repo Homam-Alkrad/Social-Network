@@ -1,0 +1,284 @@
+﻿@model List<StudentCommunity.UI.Data.RecommendedToYou>
+@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@inject UserManager<ApplicationUser> UserManager
+@{
+	Layout = "";
+	var user = await UserManager.GetUserAsync(User);
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link rel="icon" href="~/custom/images/fav.png" type="image/png" sizes="16x16">
+
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/strip.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+	<style>
+		.book {
+			height: 30vh;
+		}
+
+		.bookTitle {
+			height: 30px;
+			overflow: scroll;
+			overflow-x: hidden;
+		}
+
+		.description::-webkit-scrollbar {
+			width: 12px;
+		}
+
+		.description::-webkit-scrollbar-thumb {
+			background-color: transparent;
+		}
+
+		.description {
+			scrollbar-width: thin;
+			scrollbar-color: transparent transparent;
+		}
+
+		.description {
+			-ms-overflow-style: none;
+		}
+
+			.description::-ms-scrollbar-thumb {
+				background-color: transparent;
+			}
+
+	</style>
+
+</head>
+<body>
+	<section>
+		<div class="gap color-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="faq-top">
+							<h1>
+								Student Library and Study Center
+							</h1>
+							<form method="post">
+								<input type="text" placeholder="Find Help!">
+								<button type="submit">search</button>
+							</form>
+						</div>
+					</div>
+					<div class="row know-box">
+						<div class="col-lg-4 col-md-4">
+							<div class="knowldeg-box">
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+								<span>24/7 Access</span>
+								<p>Students can access resources anytime.</p>
+								<a href="#" title="" class="underline">Read More</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="knowldeg-box">
+								<i class="fa fa-briefcase" aria-hidden="true"></i>			
+								<span>Expanded Resources</span>
+								<p> E-books and online databases are available.</p>
+								<a href="#" title="" class="underline">Read More</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="knowldeg-box">
+								<i class="fa fa-envelope-o"></i>
+								<span>Contact us</span>
+								<p>Connect with the library staff for assistance and inquiries.</p>
+								<a href="#" title="" class="underline">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row" id="page-contents">
+					<div class="col-lg-4">
+						<aside class="sidebar static">
+							<div class="widget">
+								<h4 class="widget-title">
+									@user.FullName
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</h4>
+								<ul class="socials">
+									<li>
+										<a class="btn btn-primary" asp-action="AddWebsite" asp-controller="Library">Create</a>
+									</li>
+									@if (user != null && User.IsInRole("SuperAdmin"))
+									{
+										<li>
+											<a class="btn btn-primary" asp-action="Accept" asp-controller="Library">Accept</a>
+										</li>
+										<li>
+											<a class="btn btn-primary" asp-action="RoleList" asp-controller="Account">Edit Role</a>
+										</li>
+									}
+								</ul>
+							</div>
+							<div class="widget stick-widget px-4">
+								<h4 class="widget-title">Shortcuts</h4>
+								<ul class="naves" style="padding:30px 5px;">
+									<li class="width:100%">
+										<i class="ti-mouse-alt"></i>
+										<a asp-action="MyProfile" asp-controller="Community" title="">My Profile</a>
+									</li>
+									<li>
+										<i class="fa fa-hand-o-right" aria-hidden="true"></i>
+										<a asp-action="RecommendedToYou" asp-controller="Library" title="">Recommended To You</a>
+									</li>
+									<li>
+										<i class="ti-home"></i>
+										<a asp-action="Index" asp-controller="Community"> Students Community</a>
+									</li>
+									<li>
+										<i class="fa fa-briefcase" aria-hidden="true"></i>
+										<a asp-action="Index" asp-controller="Library" title=""> Student Library </a>
+									</li>
+									<li>
+										<i class="ti-clipboard"></i>
+										<a asp-action="News" asp-controller="Community" title="">News feed</a>
+									</li>
+									<li>
+										<i class="ti-user"></i>
+										<a href="timeline-friends.html" title="">friends</a>
+									</li>
+									<li>
+										<i class="ti-comments-smiley"></i>
+										<a asp-action="Chat" asp-controller="ChatSystem" title="">Chat System</a>
+									</li>
+									<li>
+										<i class="ti-power-off"></i>
+										<a asp-action="Logout" asp-controller="Account" title="">Logout</a>
+									</li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+					<div class="col-lg-8">
+						<div class="blog-sec right-pading">
+							<div class="post-filter-sec">
+								<form method="post" class="filter-form">
+									<input type="post" placeholder="Search post">
+									<button><i class="ti-search"></i></button>
+								</form>
+								<div class="purify" style="width: 60%;">
+									<span>filter by</span>
+									<select>
+										<option>Assending A-Z</option>
+										<option>Desending Z-A</option>
+									</select>
+									<a href="#" title="">purify</a>
+								</div>
+							</div>
+							<div class="row">
+								@foreach (var item in Model)
+								{
+									<div class="col-lg-4 col-sm-6">
+										<div class="g-post-classic">
+											<figure>
+												<img src="@item.PhotoPath" alt="book photo" class="book" />
+											</figure>
+											<div class="g-post-meta">
+												<div class="post-title">
+													<h4><a title="" id="myLink" href="@item.url" style="height:52px;" class="bookTitle description" target="_blank">@item.Name</a></h4>
+													<p style="max-height: 78px;overflow-y: scroll;" class="description">@item.Description</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								}
+								<button class="btn-view btn-load-more">Load More</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4" style="margin: -30px 0px;">
+					<div class="widget">
+						<div class="foot-logo">
+							<div class="logo">
+								<a href="index-2.html" title=""><img src="~/custom/images/resources/logo4.png" alt=""></a>
+							</div>
+							<p>
+								Take Care of Your Well-Being – Mind, Body, and Soul.
+							</p>
+						</div>
+						<ul class="location">
+							<li>
+								<i class="ti-map-alt"></i>
+								<p>
+									Amman, Jordan, Irbid, and our central hub in Alramth.
+								</p>
+							</li>
+							<li>
+								<i class="ti-mobile"></i>
+								<p>+962 7 9741 2338</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>follow</h4></div>
+						<ul class="list-style">
+							<li><i class="fa fa-facebook-square"></i> facebook</li>
+							<li><i class="fa fa-twitter-square"></i>twitter</li>
+							<li><i class="fa fa-instagram"></i>instagram</li>
+							<li><i class="fa fa-google-plus-square"></i>Google+</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>Navigate</h4></div>
+						<ul class="list-style">
+							<li><a href="about.html" title="">about us</a></li>
+							<li><a href="contact.html" title="">contact us</a></li>
+							<li><a href="terms.html" title="">terms & Conditions</a></li>
+							<li><a href="#" title="">RSS syndication</a></li>
+							<li><a href="sitemap.html" title="">Sitemap</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>useful links</h4></div>
+						<ul class="list-style">
+							<li><a href="#" title="">leasing</a></li>
+							<li><a href="#" title="">submit route</a></li>
+							<li><a href="#" title="">how does it work?</a></li>
+							<li><a href="#" title="">agent listings</a></li>
+							<li><a href="#" title="">view All</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="~/custom/js/main.min.js"></script>
+	<script src="~/custom/js/strip.pkgd.min.js"></script>
+	<script src="~/custom/js/script.js"></script>
+
+</body>
+
+</html>

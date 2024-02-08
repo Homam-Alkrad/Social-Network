@@ -1,0 +1,86 @@
+﻿@namespace StudentCommunity.UI.Models.PostModel
+@model PostUserViewModel
+@{
+	ViewData["Title"] = "University Community";
+	Layout = "_Layout1";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<style>
+
+	</style>
+</head>
+<body>
+	<div class="col-lg-12 CommunityTitle">
+		<h5>
+			<i class="fa fa-university" aria-hidden="true"></i>
+			@Model.userView.university.universityName Community
+		</h5>
+	</div>
+	<div class="central-meta">
+		<div class="new-postbox">
+			<figure>
+				<img src="@Model.userView.ProfileImg" alt="">
+			</figure>
+			<div class="newpst-input">
+				@if (TempData.ContainsKey("OffensiveMessage"))
+				{
+					<div class="custom-alert">
+						<span>@TempData["OffensiveMessage"]</span>
+						<span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+					</div>
+				}
+				<!-------------------------------------------->
+				<form asp-action="CreatePost" asp-controller="Post" method="post" enctype="multipart/form-data">
+					<input type="hidden" asp-for="postView.UserId" value="@Model.userView.UserId" />
+					<input type="hidden" asp-for="postView.universityId" value="@Model.userView.university.universityId" />
+					<input type="hidden" asp-for="postView.returnUrl" value="UserUniversity" />
+					<textarea rows="2" placeholder="write something" asp-for="postView.Content" class="post-content"></textarea>
+					<div class="attachments">
+						<ul>
+							<li>
+								<i class="fa fa-music"></i>
+								<label class="fileContainer">
+									<input type="file" asp-for="postView.PhotoFile">
+								</label>
+							</li>
+							<li>
+								<i class="fa fa-image"></i>
+								<label class="fileContainer">
+									<input type="file" asp-for="postView.PhotoFile">
+								</label>
+							</li>
+							<li>
+								<i class="fa fa-video-camera"></i>
+								<label class="fileContainer">
+									<input type="file" asp-for="postView.PhotoFile">
+								</label>
+							</li>
+							<li>
+								<i class="fa fa-camera"></i>
+								<label class="fileContainer">
+									<input type="file" asp-for="postView.PhotoFile">
+								</label>
+							</li>
+							<li>
+								<button type="submit" value="post" class="btn btn-primary mt-2">post</button>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="loadMore">
+		<!-------------------------------------------->
+		@await Component.InvokeAsync("UniversityPost",@Model.userView.university.universityId)
+		<!-------------------------------------------->
+	</div>
+</body>
+</html>

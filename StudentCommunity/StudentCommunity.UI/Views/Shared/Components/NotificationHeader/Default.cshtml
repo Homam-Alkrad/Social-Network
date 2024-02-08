@@ -1,0 +1,19 @@
+﻿<div class="dropdowns">
+	<span>
+		Notifications
+	</span>
+	<ul class="drops-menu">
+		@foreach (var item in Model)
+		{
+			<li>
+			<a href="notifications.html" title="">
+				<div class="mesg-meta">
+					<h6>Admin</h6>
+						<span>@item.Text</span>
+						<i>@item.dateTime.ToString("dd/ mmm /yy")</i>
+				</div>
+			</a>
+		</li>
+		}
+	</ul>
+</div>

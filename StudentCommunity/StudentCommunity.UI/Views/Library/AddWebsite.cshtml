@@ -1,0 +1,234 @@
+﻿@model StudentCommunity.UI.Models.Resources.RecommendedToYou.AddLinkViewModel
+@using Microsoft.AspNetCore.Identity
+@using StudentCommunity.UI.Data
+@inject UserManager<ApplicationUser> UserManager
+@{
+	Layout = "";
+	var user = await UserManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link rel="icon" href="~/custom/images/fav.png" type="image/png" sizes="16x16">
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/strip.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+
+	<style>
+		.file-input-container {
+			position: relative;
+			overflow: hidden;
+			display: inline-block;
+		}
+
+		.file-input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			font-size: 20px;
+			cursor: pointer;
+		}
+
+
+
+		.file-name {
+			margin-left: 10px;
+		}
+	</style>
+
+
+
+
+
+</head>
+<body>
+	<section>
+		<div class="gap no-top">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="g-map" style="background: #088dcd none repeat scroll 0 0;">
+							<div id=""></div>
+							<div class="map-meta">
+								<h1>Create New Resource</h1>
+								<p class="ml-5">Only authorized person can  access to  this page.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- google map -->
+
+	<section>
+		<div class="gap no-top overlap">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="contct-info">
+							<div class="contact-form">
+								<div class="cnt-title">
+									<span>Add Resource to the Library</span>
+									<i><img src="images/envelop.png" alt=""></i>
+								</div>
+								<form asp-action="AddWebsite" asp-controller="Library" enctype="multipart/form-data">
+									<div class="form-group col-lg-12">
+										<input type="text" id="input" required="required" asp-for="Name" />
+										<label class="control-label" for="input">Website Name</label><i class="mtrl-select"></i>
+										<span asp-validation-for="Name" class="text-danger"></span>
+									</div>
+									<div class="form-group col-lg-12">
+										<input type="text" id="input" required="required" asp-for="url" />
+										<label class="control-label" for="input">Website URL</label><i class="mtrl-select"></i>
+										<span asp-validation-for="url" class="text-danger"></span>
+									</div>
+									<div class="form-group col-lg-12">
+										<textarea rows="4" id="textarea" required="required" style="height: 70px;" asp-for="Description"></textarea>
+										<label class="control-label" for="textarea">Description</label><i class="mtrl-select"></i>
+										<span asp-validation-for="Description" class="text-danger"></span>
+									</div>
+									<div class="form-group col-lg-12 mt-3">
+										<select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))" class="form-select" aria-label="Default select example" required style="color:#bba5a5;">
+											<option value="">Select Category</option>
+										</select>
+									</div>
+									<div class="file-input-container col-lg-12 mt-3">
+										<label for="formFileDisabled" class="form-label">Choose Photo</label>
+										<input class="form-control" type="file" asp-for="PhotoFile">
+										<span class="text-danger" asp-validation-for="PhotoFile"></span>
+									</div>
+									<input type="submit" class="btn btn-primary ml-3 mt-2" />
+								</form>
+							</div>
+							<div class="cntct-adres">
+								<h3>@user.FullName</h3>
+								<ul>
+									<li>
+										<i class="ti-location-pin"></i>
+										<span>Jordan Amman</span>
+									</li>
+									<li>
+										<i class="fa fa-mobile-phone"></i>
+										<span>0797412338</span>
+									</li>
+									<li>
+										<i class="fa fa-envelope-o"></i>
+										<span><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cba2a5ada48bb2a4beb9a6aaa2a7e5a8a4a6">[  @user.Email  ]</a></span>
+									</li>
+								</ul>
+								<ul class="social-media">
+									<li>
+										<a href="#" title=""><i class="fa fa-facebook-square"></i></a>
+									</li>
+									<li>
+										<a href="#" title=""><i class="fa fa-google-plus-square"></i></a>
+									</li>
+									<li>
+										<a href="#" title=""><i class="fa fa-pinterest-square"></i></a>
+									</li>
+									<li>
+										<a href="#" title=""><i class="fa fa-twitter-square"></i></a>
+									</li>
+								</ul>
+								<h1 class="bg-cntct">Community</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4" style="margin: -30px 0px;">
+					<div class="widget">
+						<div class="foot-logo">
+							<div class="logo">
+								<a href="index-2.html" title=""><img src="~/custom/images/resources/logo4.png" alt=""></a>
+							</div>
+							<p>
+								Take Care of Your Well-Being – Mind, Body, and Soul.
+							</p>
+						</div>
+						<ul class="location">
+							<li>
+								<i class="ti-map-alt"></i>
+								<p>
+									Amman, Jordan, Irbid, and our central hub in Alramth.
+								</p>
+							</li>
+							<li>
+								<i class="ti-mobile"></i>
+								<p>+962 7 9741 2338</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>follow</h4></div>
+						<ul class="list-style">
+							<li><i class="fa fa-facebook-square"></i> facebook</li>
+							<li><i class="fa fa-twitter-square"></i>twitter</li>
+							<li><i class="fa fa-instagram"></i>instagram</li>
+							<li><i class="fa fa-google-plus-square"></i>Google+</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>Navigate</h4></div>
+						<ul class="list-style">
+							<li><a href="about.html" title="">about us</a></li>
+							<li><a href="contact.html" title="">contact us</a></li>
+							<li><a href="terms.html" title="">terms & Conditions</a></li>
+							<li><a href="#" title="">RSS syndication</a></li>
+							<li><a href="sitemap.html" title="">Sitemap</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>useful links</h4></div>
+						<ul class="list-style">
+							<li><a href="#" title="">leasing</a></li>
+							<li><a href="#" title="">submit route</a></li>
+							<li><a href="#" title="">how does it work?</a></li>
+							<li><a href="#" title="">agent listings</a></li>
+							<li><a href="#" title="">view All</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="js/main.min.js"></script>
+	<script src="js/strip.pkgd.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/map-init.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+	<script>
+		// Display the selected file name
+		document.querySelector('.file-input').addEventListener('change', function () {
+			var fileName = this.value.split('\\').pop();
+			document.querySelector('.file-name').textContent = fileName;
+		});
+	</script>
+</body>
+
+</html>

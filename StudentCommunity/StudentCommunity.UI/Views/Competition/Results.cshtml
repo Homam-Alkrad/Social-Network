@@ -1,0 +1,127 @@
+﻿@using StudentCommunity.UI.Models.Competition
+@model IEnumerable<ResultsViewModel>
+@{
+	Layout = "_Layout2";
+	ViewData["Title"] = "Results";
+
+
+}
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+	<style>
+		#myTable tbody tr:nth-child(1) {
+			background-color: gold;
+		}
+
+		#myTable tbody tr:nth-child(2) {
+			background-color: silver;
+		}
+
+		#myTable tbody tr:nth-child(3) {
+			background-color: #cd7f32; /* Bronze color */
+		}
+	</style>
+
+</head>
+<body>
+	<section>
+		<div class="gap gray-bg py-2">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" id="page-contents">
+							<div class="col-lg-2">
+								<aside class="sidebar static" style="width: 100%;">
+									<div class="widget px-2">
+										<h4 class="widget-title">Shortcuts</h4>
+										<ul class="naves" style="padding:10px 5px;">
+											<li class="width:100%">
+												<i class="ti-mouse-alt"></i>
+												<a asp-action="MyProfile" asp-controller="Community" title="">My Profile</a>
+											</li>
+											<li>
+												<i class="ti-home"></i>
+												<a asp-action="Index" asp-controller="Community"> Students Community</a>
+											</li>
+											<li>
+												<i class="ti-clipboard"></i>
+												<a asp-action="News" asp-controller="Community" title="">News feed</a>
+											</li>
+											<li>
+												<i class="ti-user"></i>
+												<a href="timeline-friends.html" title="">friends</a>
+											</li>
+											<li>
+												<i class="ti-comments-smiley"></i>
+												<a href="messages.html" title="">Messages</a>
+											</li>
+											<li>
+												<i class="ti-power-off"></i>
+												<a asp-action="Logout" asp-controller="Account" title="">Logout</a>
+											</li>
+										</ul>
+									</div>
+								</aside>
+							</div>
+							<div class="col-lg-10" style="background-color: #fdfdfd;">
+								<div class="loadMore p-3">
+									<div class="custom-alert col-lg-5 border border-4">
+										<span id="error-message" class="text-center"></span>
+										<span class="close-btn" onclick="closeAlert();">&times;</span>
+									</div>
+									<table id="myTable" class="table">
+										<thead>
+											<tr>
+												<th>
+													#
+												</th>
+												<th>
+													Name
+												</th>
+												<th>
+													Results
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											@{
+												int num = 0;
+											}
+											@foreach (var item in Model.OrderByDescending(x => x.mark))
+											{
+												<tr>
+													@{
+														<td>
+															@num
+														</td>
+														num++;
+													}
+													<td>
+														@Html.DisplayFor(modelItem => item.TeamName)
+													</td>
+													<td>
+														@Html.DisplayFor(modelItem => item.mark)
+													</td>
+
+												</tr>
+											
+											}
+										</tbody>
+									</table>
+									<a asp-action="Index" asp-asp-controller="Competition" style="color:blue;">Back</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
+

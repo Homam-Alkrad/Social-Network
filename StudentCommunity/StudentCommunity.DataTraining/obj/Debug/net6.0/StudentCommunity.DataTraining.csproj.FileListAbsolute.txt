@@ -1,0 +1,13 @@
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\bin\Debug\net6.0\MLModel1.mlnet
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\bin\Debug\net6.0\StudentCommunity.DataTraining.deps.json
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\bin\Debug\net6.0\StudentCommunity.DataTraining.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\bin\Debug\net6.0\StudentCommunity.DataTraining.pdb
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\StudentCommunity.DataTraining.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\StudentCommunity.DataTraining.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\StudentCommunity.DataTraining.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\StudentCommunity.DataTraining.AssemblyInfo.cs
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\StudentCommunity.DataTraining.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\StudentCommunity.DataTraining.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\refint\StudentCommunity.DataTraining.dll
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\StudentCommunity.DataTraining.pdb
+C:\Users\user\source\repos\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.DataTraining\obj\Debug\net6.0\ref\StudentCommunity.DataTraining.dll

@@ -1,0 +1,498 @@
+﻿@using StudentCommunity.UI.Data;
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<ApplicationUser> userManegar;
+@{
+	Layout = "";
+	var user = await userManegar.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link rel="icon" href="~/custom/images/fav.png" type="image/png" sizes="16x16">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<style>
+		.topbar{
+			background: #fff;
+			height: 60px;
+			padding: 0 48px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+			z-index: 99;
+			position: relative;
+			display: flex;
+			flex-direction: row;
+		}
+		.logo {
+			vertical-align: inherit;
+			width: 20%;
+			position: relative;
+			z-index: 10;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="theme-layout">
+		<div class="topbar stick">
+			<div class="logo">
+				<a title="" href="newsfeed.html">
+					<img src="~/custom/images/resources/logo4.png" />
+				</a>
+			</div>
+			<div class="top-area">
+				@await Component.InvokeAsync("User", user.Id)
+				<ul class="setting-area">
+					<li>
+						<a asp-action="Index" asp-controller="Community" title="Home">
+							<i class="ti-home"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="Notification" data-ripple="">
+							<i class="ti-bell"></i>
+						</a>
+						@await Component.InvokeAsync("NotificationHeader",user.Id)
+					</li>
+					
+					<li>
+						<a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
+						<div class="dropdowns languages">
+							<a href="#" title=""><i class="ti-check"></i>English</a>
+							<a href="#" title="">Arabic</a>
+						</div>
+					</li>
+				</ul>
+				<div class="user-img">
+					<img src="@user.ProfileImg" alt="" style="width:40px;height:40px;">
+					<div class="user-setting">
+					</div>
+				</div>
+				<span class="ti-menu main-menu" data-ripple=""></span>
+			</div>
+		</div>
+		<section>
+			<div class="gap gray-bg py-2">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row" id="page-contents">
+								<div class="col-lg-3 order-lg-1 order-2">
+									<aside class="sidebar static" style="width: 100%;">
+										<div class="widget px-2">
+											<h4 class="widget-title">Shortcuts</h4>
+											<ul class="naves" style="padding:10px 5px;">
+												<li class="width:100%">
+													<i class="ti-mouse-alt"></i>
+													<a asp-action="MyProfile" asp-controller="Community" title="">My Profile</a>
+												</li>
+												<li>
+													<i class="ti-home"></i>
+													<a asp-action="Index" asp-controller="Community">Students Community</a>
+												</li>
+												<li>
+													<i class="fa fa-university" aria-hidden="true"></i>
+													<a asp-action="UserUniversity" asp-controller="Community">@Model.userView.university.universityName</a>
+												</li>
+												<li>
+													<i class="fa fa-graduation-cap m-0" aria-hidden="true"></i>
+													<a asp-action="MajorCommunity" asp-controller="Community">@Model.userView.major.Name</a>
+												</li>	
+												<li>
+													<i class="fa fa-language" aria-hidden="true"></i>
+													<a asp-action="LanguageCommunity" asp-controller="Community">Language Community</a>
+												</li>	
+												<li>
+													<i class="fa fa-newspaper-o" aria-hidden="true"></i>	
+													<a asp-action="NewsCommunity" asp-controller="Community">Educational  News</a>
+												</li>
+												<li>
+													<i class="fa fa-trophy" aria-hidden="true"></i>
+													<a asp-action="Index" asp-controller="Competition">Competitions Community</a>
+												</li>
+												<li>
+													<i class="fa fa-briefcase" aria-hidden="true"></i>
+													<a asp-action="Index" asp-controller="Library" title=""> Student Library </a>
+												</li>
+												<li>
+													<i class="ti-comments-smiley"></i>
+													<a asp-action="Chat" asp-controller="ChatSystem" title="">Chat System</a>
+												</li>
+												<li>
+													<i class="ti-clipboard"></i>
+													<a asp-action="News" asp-controller="Community" title="">News feed</a>
+												</li>
+												<li>
+													<i class="fa fa-users" aria-hidden="true"></i>
+													<a asp-action="Index" asp-controller="Groups" title="">My Groups</a>
+												</li>
+												<li>
+													<i class="ti-user"></i>
+													<a asp-action="Index" asp-controller="Friend" title="">friends</a>
+												</li>
+												<li>
+													<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+													<a asp-action="CreateAdvertising" asp-controller="Advertisement" title="">Advertise with Us</a>
+												</li>
+												<li>
+													<i class="fa fa-wpforms" aria-hidden="true"></i>
+													<a asp-action="Create" asp-controller="Assessment" title="">Assessment</a>
+												</li>
+												@if (user != null && User.IsInRole("Admin"))
+												{
+													<li>
+														<i class="fa fa-info-circle" aria-hidden="true"></i>
+														<a asp-action="RoleList" asp-controller="Account">Admin Section</a>
+													</li>	
+												}
+												@if (user != null && User.IsInRole("SuperAdmin"))
+												{
+													<li>
+														<i class="fa fa-low-vision" aria-hidden="true"></i>
+														<a asp-action="RoleList" asp-controller="Account">Community Roles</a>
+													</li>
+												}
+												<li>
+													<i class="ti-power-off"></i>
+													<a asp-action="Logout" asp-controller="Account" title="">Logout</a>
+												</li>
+											</ul>
+										</div>
+										<div class="widget">
+											<h4 class="widget-title">Notification</h4>
+											<ul class="activitiez">
+												@await Component.InvokeAsync("Notification",user.Id)
+											</ul>
+										</div>
+										<div class="widget stick-widget px-2 pb-5">
+											<h4 class="widget-title">Your groups</h4>
+											<ul id="people-list">
+												@await Component.InvokeAsync("Group")
+											</ul>
+										</div>
+									</aside>
+								</div>
+								<div class="col-lg-6 col-sm-12 order-lg-2 order-1 postSide">
+									<div class="container col-lg-12">
+										<main role="main" class="p-0 m-0">
+											@RenderBody()
+										</main>
+									</div>
+								</div>
+								<div class="col-lg-3 order-lg-3 order-3">
+									<aside class="sidebar static" style="width:100%;">
+										<div class="widget friend-list">
+											<h4 class="widget-title">Advertisements</h4>
+											@await Component.InvokeAsync("AdvertisementImages")
+										</div>
+										<div class="widget friend-list">
+											<h4 class="widget-title">Advertisements</h4>
+											@await Component.InvokeAsync("Advertisement")
+										</div>										
+										<div class="widget friend-list stick-widget">
+											<h4 class="widget-title">Your Friends</h4>
+											<div id="searchDir"></div>
+											<ul id="people-list" class="friendz-list">
+												@await Component.InvokeAsync("FriendPage",user.Id)
+											</ul>
+										</div>
+									</aside>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4" style="margin: -30px 0px;">
+						<div class="widget">
+							<div class="foot-logo">
+								<div class="logo">
+									<a href="index-2.html" title=""><img src="~/custom/images/resources/logo4.png" alt=""></a>
+								</div>
+								<p>
+									Take Care of Your Well-Being – Mind, Body, and Soul.
+								</p>
+							</div>
+							<ul class="location">
+								<li>
+									<i class="ti-map-alt"></i>
+									<p>
+										Amman, Jordan, Irbid, and our central hub in Alramth.
+									</p>
+								</li>
+								<li>
+									<i class="ti-mobile"></i>
+									<p>+962 7 9741 2338</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>follow</h4></div>
+							<ul class="list-style">
+								<li><i class="fa fa-facebook-square"></i> facebook</li>
+								<li><i class="fa fa-twitter-square"></i>twitter</li>
+								<li><i class="fa fa-instagram"></i>instagram</li>
+								<li><i class="fa fa-google-plus-square"></i>Google+</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>Navigate</h4></div>
+							<ul class="list-style">
+								<li><a href="about.html" title="">about us</a></li>
+								<li><a href="contact.html" title="">contact us</a></li>
+								<li><a href="terms.html" title="">terms & Conditions</a></li>
+								<li><a href="#" title="">RSS syndication</a></li>
+								<li><a href="sitemap.html" title="">Sitemap</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>useful links</h4></div>
+							<ul class="list-style">
+								<li><a href="#" title="">leasing</a></li>
+								<li><a href="#" title="">submit route</a></li>
+								<li><a href="#" title="">how does it work?</a></li>
+								<li><a href="#" title="">agent listings</a></li>
+								<li><a href="#" title="">view All</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="~/js/jquery-3.6.0.min.js"></script>
+	<script>
+		function likePost(event, postId) {
+			event.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: "/Post/Like",
+				data: { postId: postId },
+				success: function (response) {
+					$(event.target).closest('.like').find('ins').text(response.likes);
+				},
+				error: function () {
+					alert("Please choose either like or dislike.");
+				}
+			});
+		}
+		function dislikePost(event, postId) {
+			event.preventDefault();
+
+			$.ajax({
+				type: "POST",
+				url: "/Post/Dislike",
+				data: { postId: postId },
+				cache: false,
+				success: function (response) {
+					$(event.target).closest('.dislike').find('ins').text(response.dislikes);
+				},
+				error: function () {
+					alert("Please choose either like or dislike.");
+				}
+			});
+
+		}
+		function postComment(postId) {
+			const commentInput = $(`#comment-input-${postId}`);
+			const commentText = commentInput.val();
+
+			const data = {
+				Content: commentText,
+				PostId: postId,
+			};
+
+			$.ajax({
+				type: "POST",
+				url: "/Post/CreateComment",
+				data: JSON.stringify(data),
+				contentType: "application/json",
+				success: function (response) {
+					if (response.success) {
+						commentInput.val("");
+						appendComment(response.comment);
+					} else {
+					}
+				},
+				error: function (error) {
+				}
+			});
+		}
+		function appendComment(comment) {
+			console.log(comment.content);
+			const commentCard = `
+								<div class="Comment">
+									<img src="${comment.user.profileImg}" title="${comment.user.fullName}" alt="Avatar">
+									<p style="font-size:17px;">
+										${comment.content}
+									</p>
+									<span class="time-right" style="font-size:8px;">${comment.commentTime}</span>
+								</div>`;
+			$(".comment-container").append(commentCard);
+		}
+		function toggleCommentSection(postId) {
+			const commentSection = document.getElementById(`comment-section-${postId}`);
+
+			if (commentSection.style.display === "none" || commentSection.style.display === "") {
+				commentSection.style.display = "block";
+			} else {
+				commentSection.style.display = "none";
+			}
+		}
+		function deleteComment(commentId) {
+			if (confirm("Are you sure you want to delete this comment?")) {
+				$("#comment-" + commentId).css("display", "none");
+				$.ajax({
+					type: "POST",
+					url: "/Post/DeleteComment",
+					data: { CommentId: commentId },
+					success: function () {
+					},
+					error: function () {
+					}
+				});
+			}
+		}
+		$(document).ready(function () {
+			$('.add-friend-link').on('click', function (e) {
+				e.preventDefault();
+
+				var userId = $(this).closest('li').data('user-id');
+				var errorMessageElement = $('#error-message-' + userId);
+				var customAlertElement = $('#custom-alert-' + userId);
+
+				$.ajax({
+					url: '/Friend/AddFriend',
+					method: 'POST',
+					data: { userId: userId },
+					success: function (data) {
+						// Handle success, update UI as needed
+						if (data.success) {
+							console.log(data.message);
+							// Update UI or show a success message
+						} else {
+							console.error(data.message);
+							// Update UI or show an error message in the custom alert
+							errorMessageElement.text(data.message);
+							customAlertElement.show(); // Show the custom alert
+						}
+					},
+					error: function (error) {
+						// Handle error
+						console.error(error);
+					}
+				});
+			});
+		});
+		function closeAlert(alertId) {
+			$('#' + alertId).hide();
+		}
+		function deleteNotification(notificationId) {
+			if (confirm("Are you sure you want to delete this notification?")) {
+				$.ajax({
+					url: '/Notification/Remove',
+					type: 'POST',
+					data: { Id: notificationId },
+					success: function (response) {
+						if (response.success) {
+							// Hide the entire notification list item
+							$('#notification_' + notificationId).hide();
+						} else {
+							alert('Failed to delete notification. ' + response.error);
+						}
+					},
+					error: function () {
+						alert('An error occurred while processing your request.');
+					}
+				});
+			}
+		}
+
+		function isEnglishOrSpecial(text) {
+			return /^[a-zA-Z0-9\s!"#\$%&'()*+,-./:;<=>?\[\\\]^_`{|}~]*$/.test(text);
+		}
+
+		document.addEventListener('DOMContentLoaded', function () {
+			var postContainers = document.querySelectorAll('.PostContiant');
+
+			postContainers.forEach(function (container) {
+				var text = container.textContent.trim();
+
+				if (isEnglishOrSpecial(text)) {
+					container.style.textAlign = 'left';
+				}
+			});
+		});
+		</script>
+	<script>
+		// Wait for the document to be fully loaded
+		document.addEventListener("DOMContentLoaded", function () {
+			// Get the carousel element
+			var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleDark'), {
+				interval: 5000 // Set the interval in milliseconds (e.g., 5000 for 5 seconds)
+			});
+		});
+	</script>
+	<script>
+		function searchFriends() {
+			var input, filter, ul, li, a, i, txtValue;
+			input = document.getElementById("searchInput");
+			filter = input.value.toUpperCase();
+			ul = document.getElementById("people-list");
+			li = ul.getElementsByTagName("li");
+
+			for (i = 0; i < li.length; i++) {
+				a = li[i].getElementsByTagName("a")[0];
+				txtValue = a.textContent || a.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
+		}
+
+		function showFriendList() {
+			var friendList = document.querySelector('.friends-list');
+			friendList.style.display = (friendList.style.display === 'block') ? 'none' : 'block';
+		}
+		function searchFriendsb(event) {
+			event.preventDefault();
+		}
+		document.addEventListener('DOMContentLoaded', function () {
+			var textarea = document.querySelector('.post-content');
+			var submitButton = document.querySelector('button[type="submit"]');
+
+			submitButton.addEventListener('click', function (event) {
+				if (!textarea.value.trim()) {
+					event.preventDefault();
+					alert("Please write something in the Post Box.");
+				}
+			});
+		});
+	</script>
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="~/custom/js/main.min.js"></script>
+	<script src="~/custom/js/script.js"></script>
+	<script src="~/custom/js/map-init.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

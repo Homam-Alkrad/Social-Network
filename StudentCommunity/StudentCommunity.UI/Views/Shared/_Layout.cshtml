@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>SignalR Chat</title>
+	<link href="~/lib/_bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/css/chat.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+	<div class="vh-100">
+		@RenderBody()
+	</div>
+
+	<script src="~/lib/_jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/_bootstrap/js/bootstrap.bundle.min.js"></script>
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿@using StudentCommunity.UI.Data;
+@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<IdentityRole>;
+@{
+	Layout = "";
+}
+<html>
+<head>
+	<title>@ViewData["Title"]</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<style>
+		body {
+			background-color: #274646;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<nav class="bg-white col-lg-12 py-2">
+		<ul class="d-flex flex-row justify-content-evenly">
+			<li>
+				<a asp-action="CompetitionsList" asp-controller="Competition" style="color:black;">Comeptition</a>
+			</li>
+			<li>
+
+				<a asp-action="Accept" asp-controller="Library" style="color:black;">Library</a>
+			</li>
+			<li>
+				<a asp-action="Index" asp-controller="Assessment" style="color:black;">Assessment</a>
+			</li>
+			<li>
+				<a asp-action="AcceptAdvertisings" asp-controller="Advertisement" style="color:black;">Advertisement</a>
+			</li>
+			<li>
+				<a asp-action="RoleList" asp-controller="Account"  style="color:black;">Roles</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="container-fluid col-lg-11 my-2  border-top p-0">
+		<div class="p-2" style="    background-color: #343443;">
+			<form method="post" asp-action="AddRemoveRole">
+
+				<table id="myTable" class="display">
+					<thead>
+						<tr>
+							<th>
+								Role Number
+							</th>
+							<th>
+								Role Name
+							</th>
+							<th>
+								Action
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+
+								<td>
+									@item.Id
+								</td>
+								<td>
+									@item.Name
+								</td>
+								<td>
+									<a asp-controller="Account" asp-action="AddRemoveRole" asp-route-Id="@item.Id" method="Post" class="btn btn-outline-info">Add Or Remove User From This Role</a>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+				<a asp-action="Index" asp-controller="Home" class="btn btn-primary">Back To Home</a>
+				<a asp-action="CreateRole" asp-controller="Account" class="btn btn-info">Create Role</a>
+			</form>
+		</div>
+	</div>
+	<script>
+		$('#myTable').DataTable({});
+	</script>
+</body>
+</html>

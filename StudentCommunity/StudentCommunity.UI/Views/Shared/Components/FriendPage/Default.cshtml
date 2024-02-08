@@ -1,0 +1,21 @@
+﻿@using StudentCommunity.UI.Data
+@model IEnumerable<ApplicationUser>
+
+@foreach (var item in Model.Take(10))
+{
+
+    <div class="custom-alert col-lg-12 border border-4 text-center" id="custom-alert-@item.Id">
+        <div class="error-message" id="error-message-@item.Id"></div>
+        <span class="close-btn" onclick="closeAlert('custom-alert-@item.Id');">&times;</span>
+    </div>
+    <li data-user-id="@item.Id">
+        <figure>
+            <img  src="@item.ProfileImg" alt="">
+            <span class="status f-away"></span>
+        </figure>
+        <div class="friendz-meta">
+            <a href="@item.Email">@item.FullName</a>
+            <a href="#" class="add-friend-link mt-2" style="color: blue; border: none;">@item.Email</a>
+        </div>
+    </li>
+}

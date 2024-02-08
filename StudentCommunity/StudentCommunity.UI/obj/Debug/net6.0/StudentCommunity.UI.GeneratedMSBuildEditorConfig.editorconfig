@@ -1,0 +1,307 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = StudentCommunity.UI
+build_property.RootNamespace = StudentCommunity.UI
+build_property.ProjectDir = C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.UI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\user\OneDrive\Documents\Social Network\Final Year Project\StudentCommunity\StudentCommunity\StudentCommunity.UI
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/AddRemoveRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZGRSZW1vdmVSb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/AdminSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZG1pblNlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/CreateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGVSb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/EditRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0Um9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxOb3RGb3VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Account/RoleList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSb2xlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Advertisement/AcceptAdvertisings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2ZXJ0aXNlbWVudFxBY2NlcHRBZHZlcnRpc2luZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Advertisement/AdvertisingsManagment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2ZXJ0aXNlbWVudFxBZHZlcnRpc2luZ3NNYW5hZ21lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Advertisement/CreateAdvertising.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2ZXJ0aXNlbWVudFxDcmVhdGVBZHZlcnRpc2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Assessment/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXNzbWVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Assessment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXNzbWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/ChatSystem/Chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFN5c3RlbVxDaGF0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Community/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuaXR5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Community/LanguageCommunity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuaXR5XExhbmd1YWdlQ29tbXVuaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Community/MajorCommunity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuaXR5XE1ham9yQ29tbXVuaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Community/MyProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuaXR5XE15UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Community/News.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuaXR5XE5ld3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Community/NewsCommunity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuaXR5XE5ld3NDb21tdW5pdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Community/UserUniversity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbXVuaXR5XFVzZXJVbml2ZXJzaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/AddQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cQWRkUXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/AnnouncingCompetition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cQW5ub3VuY2luZ0NvbXBldGl0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/CompetitionsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cQ29tcGV0aXRpb25zTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/CreateQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cQ3JlYXRlUXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/EditCompetition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cRWRpdENvbXBldGl0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/EvaluateTheAnswers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cRXZhbHVhdGVUaGVBbnN3ZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/Exam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cRXhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/GetTeamsAnswers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cR2V0VGVhbXNBbnN3ZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/QuestionsManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cUXVlc3Rpb25zTWFuYWdlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/Results.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cUmVzdWx0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Competition/Teams.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cVGVhbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Friend/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Groups/Group.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEdyb3VwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Groups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Home/test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx0ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Library/Accept.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxBY2NlcHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Library/AddWebsite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxBZGRXZWJzaXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Library/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Library/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Library/RecommendedToYou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxSZWNvbW1lbmRlZFRvWW91LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Library/_PostsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxfUG9zdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/AdvertisementImages/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWR2ZXJ0aXNlbWVudEltYWdlc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/Advertisement/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWR2ZXJ0aXNlbWVudFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/AllPost/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWxsUG9zdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/CollegeGroup/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29sbGVnZUdyb3VwXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/Comment/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29tbWVudFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/FriendPage/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRnJpZW5kUGFnZVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/Friend/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRnJpZW5kXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/GroupPost/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR3JvdXBQb3N0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/Group/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR3JvdXBcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/LanguagePost/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGFuZ3VhZ2VQb3N0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/MajorPost/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWFqb3JQb3N0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/MyPost/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTXlQb3N0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/News/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmV3c1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/NotificationHeader/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTm90aWZpY2F0aW9uSGVhZGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/Notification/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTm90aWZpY2F0aW9uXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/UniversityPost/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVW5pdmVyc2l0eVBvc3RcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Components/User/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/_CustomView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DdXN0b21WaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/_Layout1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/_Layout2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/OneDrive/Documents/Social Network/Final Year Project/StudentCommunity/StudentCommunity/StudentCommunity.UI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-wbw75aqico

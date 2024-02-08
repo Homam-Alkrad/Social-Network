@@ -1,0 +1,53 @@
+﻿@namespace StudentCommunity.UI.Models.AccountModel
+@model CreateRoleViewModel
+@{
+	Layout = "";
+	ViewData["Title"] = "CreateRole";
+}
+<html>
+<head>
+	<title>@ViewData["Title"]</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+	<style>
+		body {
+			background-color: #0a0a62;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="contact-form p-5">
+
+		<h1>CreateRole</h1>
+
+		<h4>CreateRoleViewModel</h4>
+		<hr />
+		<div class="row">
+			<div class="col-md-4">
+				<form asp-action="CreateRole">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+					<div class="form-group">
+						<label asp-for="RoleName" class="control-label"></label>
+						<input asp-for="RoleName" class="form-control" />
+						<span asp-validation-for="RoleName" class="text-danger"></span>
+					</div>
+					<div class="form-group my-5">
+						<input type="submit" value="Create" class="btn btn-primary" />
+						<a asp-action="Index" asp-controller="Home" class="btn btn-danger ml-3">Cancel</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	@section Scripts {
+		@{
+			await Html.RenderPartialAsync("_ValidationScriptsPartial");
+		}
+	}
+</body>
+</html>

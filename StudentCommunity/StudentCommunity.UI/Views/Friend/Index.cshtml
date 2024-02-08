@@ -1,0 +1,664 @@
+﻿@model StudentCommunity.UI.Models.FriendModel.FrindPageViewModel
+@{
+	Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>Winku Social Network Toolkit</title>
+	<link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+
+
+	<link href="~/custom/css/main.min.css" rel="stylesheet" />
+	<link href="~/custom/css/style.css" rel="stylesheet" />
+	<link href="~/custom/css/color.css" rel="stylesheet" />
+	<link href="~/custom/css/responsive.css" rel="stylesheet" />
+
+</head>
+<body>
+	<div class="theme-layout">
+		<div class="topbar stick">
+			<div class="logo">
+				<a title="" href="newsfeed.html">
+					<img src="~/custom/images/resources/logo4.png" />
+				</a>
+			</div>
+
+			<div class="top-area">
+				<div class="top-search">
+					<form method="post" class="">
+						<input type="text" placeholder="Search Friend">
+						<button data-ripple><i class="ti-search"></i></button>
+					</form>
+				</div>
+				<ul class="setting-area">
+					<li><a href="newsfeed.html" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+					<li>
+						<a href="#" title="Notification" data-ripple="">
+							<i class="ti-bell"></i><span>20</span>
+						</a>
+						<div class="dropdowns">
+							<span>4 New Notifications</span>
+							<ul class="drops-menu">
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-1.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>sarah Loren</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag green">New</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-2.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Jhon doe</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag red">Reply</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-3.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Andrew</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag blue">Unseen</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-4.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Tom cruse</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag">New</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-5.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Amy</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag">New</span>
+								</li>
+							</ul>
+							<a href="notifications.html" title="" class="more-mesg">view more</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span>12</span></a>
+						<div class="dropdowns">
+							<span>5 New Messages</span>
+							<ul class="drops-menu">
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-1.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>sarah Loren</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag green">New</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-2.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Jhon doe</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag red">Reply</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-3.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Andrew</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag blue">Unseen</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-4.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Tom cruse</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag">New</span>
+								</li>
+								<li>
+									<a href="notifications.html" title="">
+										<img src="images/resources/thumb-5.jpg" alt="">
+										<div class="mesg-meta">
+											<h6>Amy</h6>
+											<span>Hi, how r u dear ...?</span>
+											<i>2 min ago</i>
+										</div>
+									</a>
+									<span class="tag">New</span>
+								</li>
+							</ul>
+							<a href="messages.html" title="" class="more-mesg">view more</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
+						<div class="dropdowns languages">
+							<a href="#" title=""><i class="ti-check"></i>English</a>
+							<a href="#" title="">Arabic</a>
+							<a href="#" title="">Dutch</a>
+							<a href="#" title="">French</a>
+						</div>
+					</li>
+				</ul>
+				<div class="user-img">
+					<img src="images/resources/admin.jpg" alt="">
+					<div class="user-setting">
+					</div>
+				</div>
+				<span class="ti-menu main-menu" data-ripple=""></span>
+			</div>
+		</div>
+		<section>
+			<div class="feature-photo">
+				<figure><img src="~/custom/images/resources/timeline-1.jpg" /></figure>
+				<div class="add-btn">
+					<span>1205 followers</span>
+					<a href="#" title="" data-ripple="">Add Friend</a>
+				</div>
+				<form class="edit-phto">
+					<i class="fa fa-camera-retro"></i>
+					<label class="fileContainer">
+						Edit Cover Photo
+						<input type="file" />
+					</label>
+				</form>
+				<div class="container-fluid">
+					<div class="row merged">
+						<div class="col-lg-2 col-sm-3">
+							<div class="user-avatar">
+								<figure>
+									<img src="@Model.userView.ProfileImg" />
+								</figure>
+							</div>
+						</div>
+						<div class="col-lg-10 col-sm-9">
+							<div class="timeline-info">
+								<ul>
+									<li class="admin-name">
+										<h5>@Model.userView.FullName</h5>
+										<span>@Model.userView.Email</span>
+									</li>
+									<li>
+										<a class="" href="time-line.html" title="" data-ripple="">time line</a>
+										<a class="" href="timeline-photos.html" title="" data-ripple="">Photos</a>
+										<a class="" href="timeline-videos.html" title="" data-ripple="">Videos</a>
+										<a class="active" href="timeline-friends.html" title="" data-ripple="">Friends</a>
+										<a class="" href="timeline-groups.html" title="" data-ripple="">Groups</a>
+										<a class="" href="about.html" title="" data-ripple="">about</a>
+										<a class="" href="#" title="" data-ripple="">more</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="gap gray-bg">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row" id="page-contents">
+								<div class="col-lg-3">
+									<aside class="sidebar static">
+										<div class="widget">
+											<h4 class="widget-title">Shortcuts</h4>
+											<ul class="naves">
+												<li class="width:100%">
+													<i class="ti-mouse-alt"></i>
+													<a asp-action="MyProfile" asp-controller="Community" title="">My Profile</a>
+												</li>
+												<li>
+													<i class="fa fa-users" aria-hidden="true"></i>
+													<a asp-action="Index" asp-controller="Community"> Students Community</a>
+												</li>
+												<li>
+													<i class="fa fa-briefcase" aria-hidden="true"></i>
+													<a asp-action="Index" asp-controller="Library" title=""> Student Library </a>
+												</li>
+												<li>
+													<i class="fa fa-trophy" aria-hidden="true"></i>
+													<a asp-action="Index" asp-controller="Competition">Competitions Community</a>
+												</li>
+												<li>
+													<i class="ti-clipboard"></i>
+													<a asp-action="News" asp-controller="Community" title="">News feed</a>
+												</li>
+												<li>
+													<i class="ti-user"></i>
+													<a href="timeline-friends.html" title="">friends</a>
+												</li>
+												<li>
+													<i class="ti-comments-smiley"></i>
+													<a asp-action="Chat" asp-controller="Home" title="">Chat System</a>
+												</li>
+												<li>
+													<i class="ti-power-off"></i>
+													<a asp-action="Logout" asp-controller="Account" title="">Logout</a>
+												</li>
+											</ul>
+										</div>
+									</aside>
+								</div>
+								<div class="col-lg-6">
+									<div class="central-meta">
+										<div class="frnds">
+											<ul class="nav nav-tabs">
+												<li class="nav-item"><a class="active" href="#frends" data-toggle="tab">My Friends</a> <span>@Model.FrindsView.Where(f=>f.Status==true).Count()</span></li>
+												<li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Friend Requests</a><span>@Model.FrindsView.Where(f=>f.Status==false).Count()</span></li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane active fade show " id="frends">
+													<ul class="nearby-contct">
+														@foreach (var item in Model.FrindsView)
+														{
+																	<li>
+																		<div class="nearly-pepls">
+																			<figure>
+																				<a href="time-line.html" title=""><img src="@item.SenderUser.ProfileImg" /></a>
+																			</figure>
+																			<div class="pepl-info">
+																				<h4><a href="time-line.html" title="">@item.SenderUser.FullName</a></h4>
+																				<span>@item.major.Name</span>
+																		@if (item.Status == false)
+																		{
+																						<a href="#" title="" class="add-butn more-action accept-button" data-user-id="@item.SenderUserId" data-ripple="">Accept</a>
+																						<a href="#" title="" class="add-butn decline-button" data-user-id="@item.SenderUserId" data-ripple="">Decline</a>
+																						<a class="success-indicator" data-user-id="@item.SenderUserId" style="display: none;"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+																		}
+																		else
+																		{
+																						<a disabled style="background-color:transparent;border:none; color:red;"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+																		}
+																			</div>
+																		</div>
+																	</li>
+														}
+													</ul>
+
+
+													<div class="lodmore"><button class="btn-view btn-load-more"></button></div>
+												</div>
+												<div class="tab-pane fade" id="frends-req">
+													<ul class="nearby-contct">
+														<li>
+															<div class="nearly-pepls">
+																<figure>
+																	<a href="time-line.html" title=""><img src="images/resources/nearly5.jpg" alt=""></a>
+																</figure>
+																<div class="pepl-info">
+																	<h4><a href="time-line.html" title="">Amy watson</a></h4>
+																	<span>ftv model</span>
+																	<a href="#" title="" class="add-butn more-action" data-ripple="">delete Request</a>
+																	<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+																</div>
+															</div>
+														</li>
+
+														<li>
+															<div class="nearly-pepls">
+																<figure>
+																	<a href="time-line.html" title=""><img src="images/resources/nearly1.jpg" alt=""></a>
+																</figure>
+																<div class="pepl-info">
+																	<h4><a href="time-line.html" title="">sophia Gate</a></h4>
+																	<span>ftv model</span>
+																	<a href="#" title="" class="add-butn more-action" data-ripple="">delete Request</a>
+																	<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="nearly-pepls">
+																<figure>
+																	<a href="time-line.html" title=""><img src="images/resources/nearly6.jpg" alt=""></a>
+																</figure>
+																<div class="pepl-info">
+																	<h4><a href="time-line.html" title="">caty lasbo</a></h4>
+																	<span>ftv model</span>
+																	<a href="#" title="" class="add-butn more-action" data-ripple="">delete Request</a>
+																	<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="nearly-pepls">
+																<figure>
+																	<a href="time-line.html" title=""><img src="images/resources/friend-avatar9.jpg" alt=""></a>
+																</figure>
+																<div class="pepl-info">
+																	<h4><a href="time-line.html" title="">jhon kates</a></h4>
+																	<span>ftv model</span>
+																	<a href="#" title="" class="add-butn more-action" data-ripple="">delete Request</a>
+																	<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="nearly-pepls">
+																<figure>
+																	<a href="time-line.html" title=""><img src="images/resources/nearly2.jpg" alt=""></a>
+																</figure>
+																<div class="pepl-info">
+																	<h4><a href="time-line.html" title="">sara grey</a></h4>
+																	<span>ftv model</span>
+																	<a href="#" title="" class="add-butn more-action" data-ripple="">delete Request</a>
+																	<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="nearly-pepls">
+																<figure>
+																	<a href="time-line.html" title=""><img src="images/resources/nearly4.jpg" alt=""></a>
+																</figure>
+																<div class="pepl-info">
+																	<h4><a href="time-line.html" title="">Sara grey</a></h4>
+																	<span>ftv model</span>
+																	<a href="#" title="" class="add-butn more-action" data-ripple="">delete Request</a>
+																	<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="nearly-pepls">
+																<figure>
+																	<a href="time-line.html" title=""><img src="images/resources/nearly3.jpg" alt=""></a>
+																</figure>
+																<div class="pepl-info">
+																	<h4><a href="time-line.html" title="">Sexy cat</a></h4>
+																	<span>ftv model</span>
+																	<a href="#" title="" class="add-butn more-action" data-ripple="">delete Request</a>
+																	<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="nearly-pepls">
+																<figure>
+																	<a href="time-line.html" title=""><img src="images/resources/friend-avatar9.jpg" alt=""></a>
+																</figure>
+																<div class="pepl-info">
+																	<h4><a href="time-line.html" title="">jhon kates</a></h4>
+																	<span>ftv model</span>
+																	<a href="#" title="" class="add-butn more-action" data-ripple="">delete Request</a>
+																	<a href="#" title="" class="add-butn" data-ripple="">Confirm</a>
+																</div>
+															</div>
+														</li>
+													</ul>
+													<button class="btn-view btn-load-more"></button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<aside class="sidebar static">
+										<div class="widget">
+											<h4 class="widget-title">Profile intro</h4>
+											<ul class="short-profile">
+												<li>
+													<span>about</span>
+													<p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft company. </p>
+												</li>
+												<li>
+													<span>fav tv show</span>
+													<p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft company. </p>
+												</li>
+												<li>
+													<span>favourit music</span>
+													<p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft company. </p>
+												</li>
+											</ul>
+										</div><!-- who's following -->
+									</aside>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4">
+						<div class="widget">
+							<div class="foot-logo">
+								<div class="logo">
+									<a href="index-2.html" title=""><img src="images/logo.png" alt=""></a>
+								</div>
+								<p>
+									The trio took this simple idea and built it into the world’s leading carpooling platform.
+								</p>
+							</div>
+							<ul class="location">
+								<li>
+									<i class="ti-map-alt"></i>
+									<p>33 new montgomery st.750 san francisco, CA USA 94105.</p>
+								</li>
+								<li>
+									<i class="ti-mobile"></i>
+									<p>+1-56-346 345</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>follow</h4></div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>Navigate</h4></div>
+							<ul class="list-style">
+								<li><a href="about.html" title="">about us</a></li>
+								<li><a href="contact.html" title="">contact us</a></li>
+								<li><a href="terms.html" title="">terms & Conditions</a></li>
+								<li><a href="#" title="">RSS syndication</a></li>
+								<li><a href="sitemap.html" title="">Sitemap</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>useful links</h4></div>
+							<ul class="list-style">
+								<li><a href="#" title="">leasing</a></li>
+								<li><a href="#" title="">submit route</a></li>
+								<li><a href="#" title="">how does it work?</a></li>
+								<li><a href="#" title="">agent listings</a></li>
+								<li><a href="#" title="">view All</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title"><h4>download apps</h4></div>
+							<ul class="colla-apps">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="bottombar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<i><img src="images/credit-cards.png" alt=""></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="side-panel">
+		<h4 class="panel-title">General Setting</h4>
+		<form method="post">
+			<div class="setting-row">
+				<span>use night mode</span>
+				<input type="checkbox" id="nightmode1" />
+				<label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Notifications</span>
+				<input type="checkbox" id="switch22" />
+				<label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Notification sound</span>
+				<input type="checkbox" id="switch33" />
+				<label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>My profile</span>
+				<input type="checkbox" id="switch44" />
+				<label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Show profile</span>
+				<input type="checkbox" id="switch55" />
+				<label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+		</form>
+		<h4 class="panel-title">Account Setting</h4>
+		<form method="post">
+			<div class="setting-row">
+				<span>Sub users</span>
+				<input type="checkbox" id="switch66" />
+				<label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>personal account</span>
+				<input type="checkbox" id="switch77" />
+				<label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Business account</span>
+				<input type="checkbox" id="switch88" />
+				<label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Show me online</span>
+				<input type="checkbox" id="switch99" />
+				<label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Delete history</span>
+				<input type="checkbox" id="switch101" />
+				<label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Expose author name</span>
+				<input type="checkbox" id="switch111" />
+				<label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+		</form>
+	</div><!-- side panel -->
+
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="js/main.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/map-init.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+	<script src="~/js/jquery-3.7.0.js"></script>
+	<script>
+	function sendFriendRequestAction(userId, action, successCallback) {
+			$.ajax({
+				url: '/Friend/FriendRequestAction', 
+				type: 'POST',
+				data: { userId: userId, action: action },
+				success: function (result) {
+					successCallback(result);
+				},
+				error: function (error) {
+					console.error('Error:', error);
+				}
+			});
+		}
+
+		$('.accept-button').on('click', function (e) {
+			e.preventDefault(); 
+
+			var userId = $(this).data('userId');
+
+			function handleSuccess(result) {
+				if (result.success) {
+					$(`.accept-button[data-user-id="${userId}"], .decline-button[data-user-id="${userId}"]`).hide();
+					$(`.success-indicator[data-user-id="${userId}"]`).show();
+				} else {
+					console.error(result.message);
+				}
+			}
+			sendFriendRequestAction(userId, 'accept', handleSuccess);
+		});
+
+		$('.decline-button').on('click', function (e) {
+			e.preventDefault(); 
+
+			var userId = $(this).data('userId');
+
+			// Callback function to handle the result and update the UI
+			function handleSuccess(result) {
+				if (result.success) {
+					// Update UI here (e.g., hide the Accept and Decline buttons)
+					$(`.accept-button[data-user-id="${userId}"], .decline-button[data-user-id="${userId}"]`).hide();
+					// Remove the user from the nearby-contct
+					$(`.nearby-contct li:has(a.add-butn.more-action.accept-button[data-user-id="${userId}"])`).remove();
+				} else {
+					console.error(result.message);
+				}
+			}
+
+			// Send friend request action to the server
+			sendFriendRequestAction(userId, 'decline', handleSuccess);
+		});
+
+
+
+	</script>
+</body>
+
+
+</html>
